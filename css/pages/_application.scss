@@ -1,0 +1,200 @@
+.application {
+  background: linear-gradient(180deg, #D5DEE1, #7C9E98);
+  padding-bottom: 30rem;
+
+  @include b768 {
+    padding-bottom: 25rem;
+  }
+
+
+  .applicationBanner {
+    position: relative;
+
+    .applicationBanner_bg {
+      position: relative;
+      height: 95vw;
+      object-fit: cover;
+      object-position: center;
+
+      @include b768 {
+        object-fit: contain;
+        object-position: top;
+        height: auto;
+      }
+    }
+
+    .applicationBanner_clothes {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 7rem;
+      margin: auto;
+      width: 80%;
+
+      @include b768 {
+        width: auto;
+        top: 80px;
+      }
+    }
+
+    .applicationBanner_text {
+      display: flex;
+      flex-direction: column-reverse;
+      position: absolute;
+      bottom: -1rem;
+      left: 1rem;
+      max-width: 90%;
+
+      @include b768 {
+        bottom: 18rem;
+        left: 5rem;
+        flex-direction: row;
+      }
+
+      .application_text01 {
+        width: 700px;
+        max-width: 100%;
+        margin-bottom: 0;
+        filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+
+        @include b768 {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .application_text02 {
+        width: 240px;
+        max-width: 100%;
+        margin-bottom: 1rem;
+
+        @include b768 {
+          width: 303px;
+          max-width: 100%;
+          margin-bottom: 0;
+
+        }
+      }
+    }
+  }
+
+
+  h4 {
+    color: $green;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    padding: 2rem 0 1rem 0;
+    line-height: 2rem;
+
+    span {
+      font-size: 1rem;
+      color: #FFF;
+      letter-spacing: 1px;
+    }
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: justify;
+
+    @include b768 {
+      text-align: center;
+    }
+  }
+
+  .techItem {
+    margin: 8rem 3rem;
+    max-width: 100%;
+
+    @include b768 {
+      margin: 2rem auto;
+      max-width: 1280px;
+    }
+
+    img {
+      max-width: 90%;
+    }
+
+    .techPhoto {
+      position: relative;
+      margin: 6rem 0 0;
+      text-align: center;
+
+      @include b768 {
+
+        margin: 2rem 0;
+      }
+
+      .techPhoto01 {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          max-width: 150%;
+        }
+      }
+
+
+      .techPhoto02 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        text-align: center;
+        filter: drop-shadow(1px 4px 3px rgba(0, 0, 0, 1));
+        max-width: 70%;
+
+        @include b768 {
+          bottom: 2rem;
+          top: 0;
+          max-width: 90%;
+        }
+      }
+    }
+
+    .techItemText {
+      padding-top: 2rem;
+
+      @include b768 {
+        padding-top: 0;
+        padding-left: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: auto;
+        text-align: justify;
+        color: #595757;
+        font-family: "Noto Sans TC", sans-serif;
+
+        &.en {
+          font-family: "Inter", sans-serif;
+          padding-top: 1rem;
+          text-align: left;
+          letter-spacing: 0;
+        }
+
+        br {
+          display: contents;
+
+          @include b768 {
+            display: block;
+          }
+        }
+
+        @include b768 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+
+  }
+
+}

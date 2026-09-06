@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+// ====== RWD斷點設定  ======
+@mixin b320 {
+	@media (min-width: 320px) {
+		@content;
+	}
+}
+
+@mixin b375 {
+	@media (min-width: 375px) {
+		@content;
+	}
+}
+
+@mixin b576 {
+	@media (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin b768 {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin b1024 {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin b992 {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin b1140 {
+	@media (min-width: 1140px) {
+		@content;
+	}
+}
+
+@mixin b1200 {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin b1400 {
+	@media (min-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin b1635 {
+	@media (min-width: 1635px) {
+		@content;
+	}
+}

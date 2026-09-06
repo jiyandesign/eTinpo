@@ -1,0 +1,282 @@
+    .contact {
+      background: linear-gradient(180deg, #D5DEE1 0%, #A7AFB4 100%);
+      color: $green;
+      padding-top: 80px;
+      overflow: hidden;
+      position: relative;
+
+      .circle {
+        position: relative;
+
+        .cloth-w {
+          position: absolute;
+          top: -5rem;
+          right: -1rem;
+          z-index: 2;
+          width: 180%;
+
+
+          @include b768 {
+            top: 0;
+            right: 0;
+            width: auto;
+
+
+          }
+
+        }
+
+        .circle1 {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          max-width: 40%;
+        }
+
+        .circle2 {
+          position: absolute;
+          right: 0;
+          top: 20rem;
+          z-index: 1;
+          max-width: 40%;
+        }
+      }
+
+      .title {
+        text-align: center;
+        position: relative;
+        z-index: 9;
+
+        img {
+          width: 220px;
+
+          @include b768 {
+            width: 270px;
+          }
+        }
+      }
+
+      h3 {
+        padding-top: 3rem;
+        color: $green;
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 3px;
+
+      }
+
+      h4 {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-family: "Inter", sans-serif;
+        padding-bottom: 3rem;
+
+        @include b768 {
+          padding-bottom: 5rem;
+
+        }
+      }
+
+      .contactTheme {
+        text-align: center;
+        flex-direction: column;
+        padding-top: 5rem;
+        z-index: 9;
+
+        @include b1024 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          text-align: left;
+        }
+
+        .contactPhoto {
+          padding: 0 1rem;
+          max-width: 980px;
+
+          @include b768 {
+            padding: 0 3rem;
+          }
+
+          .pic1 {
+            display: flex;
+            justify-content: flex-end;
+            z-index: 9;
+            position: relative;
+
+          }
+
+          .pic2 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 2rem;
+
+            @include b768 {
+              flex-direction: row;
+              align-items: center;
+
+            }
+
+            img {
+              max-width: 100%;
+
+              @include b768 {
+                max-width: 50%;
+              }
+            }
+          }
+        }
+
+        .contactText {
+          padding: 1rem 0 3rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+
+          @include b1024 {
+            position: relative;
+
+            padding: 0;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #595757;
+            margin-bottom: .5rem;
+            letter-spacing: 1px;
+            a{
+              color: #595757;
+            }
+          }
+
+
+          .contactInformation {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            padding-top: .5rem;
+
+            @include b768 {
+              padding-left: 2rem;
+              padding-top: 0;
+            }
+
+            .community {
+              padding-top: 0.5rem;
+
+              @include b768 {
+                padding-top: 1rem;
+              }
+
+              a {
+                margin: 0 0.8rem 0 0;
+              }
+            }
+          }
+        }
+      }
+
+      .contactFooter {
+        background: url('../image/contact/cloth-w2.png') no-repeat top right;
+        background-size: 100%;
+        padding-top: 6rem;
+        padding-bottom: 10rem;
+        margin-top: -3rem;
+
+        @include b768 {
+          background: url('../image/contact/cloth-w2.png') no-repeat top left;
+          background-size: 100%;
+          padding-top: 50rem;
+          margin-top: -10rem;
+
+        }
+
+        .huandong {
+          max-height: 24px;
+          height: 10px;
+          transform: translateX(-20%);
+          margin-bottom: 1rem;
+
+          @include b768 {
+            height: auto;
+            max-height: 100%;
+          }
+        }
+
+        .companyIcon {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: space-between;
+          align-items: flex-start;
+
+          @include b768 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+
+          img {
+            width: 80%;
+
+            @include b768 {
+              width: auto;
+
+            }
+          }
+
+          .house {
+            width: 30%;
+            margin-top: -9rem;
+            margin-left: 4rem;
+
+            @include b768 {
+              margin-top: 3rem;
+            }
+          }
+
+          .nanke {
+            max-height: 24px;
+            height: 10px;
+            margin-top: 8.5rem;
+            margin-right: 20rem;
+            transform: translateX(48%);
+
+            @include b768 {
+              width: 300px;
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+              transform: translateX(0);
+            }
+          }
+
+
+        }
+
+      }
+
+      .googleMap {
+        position: relative;
+        padding-bottom: 11rem;
+
+        .mapLeft {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: none;
+
+          @include b768 {
+            display: block;
+          }
+        }
+      }
+    }

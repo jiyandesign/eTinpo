@@ -1,0 +1,320 @@
+.rd {
+  background: linear-gradient(180deg, #D5DEE1 60%, #004632 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  h3 {
+    padding-top: 2rem;
+    color: $green;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  h4 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+  }
+
+  .rd_bn {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 80px;
+
+    .text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 7rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+
+      @include b768 {
+        top: 10rem;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .text-g {
+        padding: 3rem;
+        color: $green;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 5px;
+        line-height: 2.2rem;
+        text-align: justify;
+
+        span {
+          display: inline;
+
+          @include b768 {
+            display: block;
+          }
+        }
+      }
+
+      .text-w {
+        margin-top: 3rem;
+        display: none;
+
+        @include b768 {
+          display: block;
+        }
+      }
+    }
+
+
+    .circle1 {
+      position: absolute;
+      right: 0;
+      top: -10rem;
+      z-index: 0;
+      max-width: 55%;
+    }
+
+    .cloth-w {
+      position: relative;
+      z-index: 1;
+      height: 15rem;
+      object-fit: cover;
+      object-position: center;
+      transform: translate(0, 28%) scale(1.5);
+
+      @include b768 {
+        height: auto;
+        object-fit: contain;
+        object-position: top;
+      }
+
+    }
+  }
+
+  .circle {
+    position: relative;
+
+    .circle2 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      max-width: 90%;
+
+      @include b768 {
+        max-width: 50%;
+      }
+    }
+  }
+
+
+  .actionGroup {
+    max-width: 780px;
+    padding-top: 2rem;
+    padding-bottom: 0;
+
+    @include b768 {
+      padding-bottom: 1rem;
+
+    }
+  }
+
+  .action {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+
+    @include b768 {
+      padding: 0 1.5rem;
+      width: 90%;
+
+    }
+
+    &:nth-child(even) {
+      flex-direction: column;
+    }
+
+    img{
+      max-height: 100%;
+      @include b768{
+      max-height: 133px;
+
+      }
+    }
+
+    @include b768 {
+      flex-direction: row;
+      width: 100%;
+      margin: 3rem 0;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        justify-content: end;
+
+      }
+    }
+
+
+    .actionText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 1.5rem 1rem;
+      background: #FFF;
+      width: max-content;
+      max-width: 100%;
+      max-height: 100%;
+
+      @include b768 {
+        width: 350px;
+        padding: 1rem 2rem 0 .8rem;
+        max-height: 133px;
+      }
+
+
+      h4 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        color: $green;
+        font-size: 1.1rem;
+        text-align: left;
+        letter-spacing: 1px;
+        padding-left: 50px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        span {
+          display: block;
+          font-family: "Noto Sans TC", sans-serif;
+          font-weight: 300;
+          font-size: .9rem;
+        }
+      }
+
+      p {
+        color: #595757;
+        font-size: .9rem;
+        padding-top: 1rem;
+
+        @include b768 {
+          font-size: .85rem;
+          padding-top: 0;
+        }
+      }
+    }
+
+    &:nth-child(1) .actionText h4::after {
+      background-image: url("../image/rd/rd_icon_01.png");
+    }
+
+    &:nth-child(2) .actionText h4::after {
+      background-image: url("../image/rd/rd_icon_02.png");
+    }
+
+    &:nth-child(3) .actionText h4::after {
+      background-image: url("../image/rd/rd_icon_03.png");
+    }
+
+    &:nth-child(4) .actionText h4::after {
+      background-image: url("../image/rd/rd_icon_04.png");
+    }
+  }
+
+  .rdFooter {
+    position: relative;
+    overflow: hidden;
+    .clouth{
+      padding-top: 5rem;
+      @include b768{
+      padding-top: 0;
+      }
+    }
+
+    .clouth1 {
+      position: relative;
+      left: -3rem;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    .clouth2 {
+      position: absolute;
+      right: -13rem;
+      bottom: 24rem;
+      z-index: 1;    transform: scale(0.7);
+      @include b768 {
+            transform: scale(1);
+      right: 0;
+        bottom: 8rem;
+        
+      width: auto;
+      }
+    }
+
+    .rdFooter_text {
+      background: rgba(256, 256, 256, .6);
+      color: #595757;
+      font-size: .9rem;
+      padding: 2rem 3rem;
+      margin: 0 1.5rem;
+      letter-spacing: 1px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: justify;
+
+      @include b768 {
+        right: 23rem;
+        max-width: 337px;
+        font-size: .9rem;
+        letter-spacing: 5px;
+        max-width: 320px;
+        text-align: left;
+
+      }
+
+      p {
+        position: relative;
+        z-index: 9;
+      }
+
+      .btn {
+        transform: scale(1.5);
+        width: 100px;
+
+      }
+    }
+  }
+}

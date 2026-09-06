@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 931.19 910.13">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="326.59" width="604.6" height="910.13"/>
+    </clipPath>
+  </defs>
+  <g id="color">
+    <g class="cls-3">
+      <ellipse class="cls-2" cx="460.53" cy="455.64" rx="445.99" ry="461.4" transform="translate(-107.49 767.15) rotate(-73.43)"/>
+    </g>
+  </g>
+</svg>

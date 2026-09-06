@@ -1,0 +1,251 @@
+.bannerTechs {
+  position: relative;
+  background: #D5DEE1;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    padding-top: 0;
+
+    @include b768 {
+      width: 100%;
+      object-fit: contain;
+      object-position: top;
+      padding-top: 60px;
+
+    }
+  }
+
+  .techPic1 {
+    padding-top: 57px;
+  }
+
+  .bannerText {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3rem;
+    filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+
+    @include b768 {
+      position: absolute;
+      bottom: 8rem;
+      flex-direction: row;
+
+    }
+
+    img {
+      max-width: 100%;
+
+    }
+
+    .b-left {
+      max-width: 380px;
+      height: auto;
+    }
+
+    .b-right {
+      max-width: 300px;
+      margin-left: 0;
+      margin-top: -2rem;
+      padding-top: 60px;
+      height: auto;
+
+      @include b768 {
+        max-width: 645px;
+        margin-left: 2rem;
+        margin-top: -7rem;
+        padding-top: 0;
+
+
+      }
+
+    }
+  }
+}
+
+
+.technologies {
+  background: linear-gradient(180deg, #D5DEE1 10%, #C8D0D4 100%);
+  padding: 5rem 3rem;
+
+  @include b768 {
+    padding: 5rem 4rem;
+  }
+
+  .techsTheme {
+    text-align: center;
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-align: justify;
+      color: #595757;
+      margin-top: 2rem;
+
+      @include b768 {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      br {
+        display: contents;
+
+        @include b768 {
+          display: inline;
+        }
+      }
+
+    }
+  }
+
+}
+
+.features {
+  background: #DCE6E8;
+  padding-bottom: 0;
+
+  @include b768 {
+    padding-bottom: 8rem;
+    background: linear-gradient(180deg, #DCE6E8 60%, #90AFA9 100%);
+
+
+  }
+
+  .featuresTitle {
+    background: url("../image/technolgy/fearures.svg")top right no-repeat;
+    background-size: 100%;
+    height: 200px;
+    margin-top: -1px;
+    text-align: center;
+
+    @include b768 {
+      background: url("../image/technolgy/fearures.svg")bottom right no-repeat;
+      background-size: 100%;
+      height: 300px;
+      text-align: left;
+
+
+    }
+
+    .adventures {
+      margin-left: 0;
+      max-width: 80%;
+
+      @include b768 {
+        margin-left: 10rem;
+      }
+    }
+
+    h4 {
+      color: $green;
+      font-size: 1.5rem;
+      font-weight: 200;
+      padding-top: 4rem;
+      letter-spacing: 5px;
+
+      @include b768 {
+        font-size: 2.5rem;
+      }
+    }
+
+    span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 450;
+      padding-bottom: .5rem;
+      letter-spacing: 6px;
+
+      @include b768 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .applicationText {
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto 3rem;
+
+    @include b768 {
+      margin: auto;
+    }
+
+    .techItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+
+      @include b768 {
+        margin-top: 0;
+      }
+
+      .techItemText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 250px;
+
+        h5 {
+          color: $green;
+          font-weight: 400;
+          font-size: 1.5rem;
+          padding-top: 1rem;
+        }
+
+        p {
+          color: #004632;
+          font-size: 1rem;
+          padding-top: 0;
+          text-align: center;
+          font-weight: 400;
+          letter-spacing: -1px;
+
+          @include b768 {
+            padding-top: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0;
+
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.technologiesFooter {
+  background: #DCE6E8;
+  width: 100%;
+  padding-bottom: 52vh;
+  padding-top: 0;
+
+  @include b768 {
+    background: #90AFA9;
+    padding-bottom: 10rem;
+    padding-top: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: top;
+
+    @include b768 {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: top;
+
+    }
+  }
+}

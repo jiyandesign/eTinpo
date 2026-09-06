@@ -1,0 +1,2472 @@
+    /*字體*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tenor+Sans&display=swap');
+    // mixins
+    @import 'mixins/breakpoint';
+    @import 'mixins/color';
+    // 分頁
+    @import 'pages/partners';
+    @import 'pages/responsibility';
+    @import 'pages/clean';
+    @import 'pages/develop';
+    @import 'pages/contact';
+    @import 'pages/application';
+    @import 'pages/technologies';
+    @import 'pages/about';
+    @import 'pages/product';
+    @import 'pages/rd';
+
+
+    /* 針對桌面版進行設定 */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            /* 避免顯示偏移 */
+        }
+    }
+
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        position: relative;
+    }
+
+    svg,
+    img {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        max-width: 100%;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    #navbarNav {
+        z-index: 99;
+    }
+
+    .navbar-expand-lg {
+        .navbar-collapse {
+            justify-content: space-around;
+        }
+
+    }
+
+    .navbar-collapse {
+        justify-content: space-between;
+    }
+
+    .nav-link {
+        color: $green;
+
+        &:focus,
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    .navbar-brand {
+        @include b768 {
+            margin-right: 10rem;
+        }
+    }
+
+    .dropdown-menu {
+        background: $green;
+        border: none;
+    }
+
+    .dropdown-item {
+        color: $green;
+
+        &:focus,
+        &:hover {
+            color: $yellow;
+            background-color: transparent;
+        }
+
+    }
+
+    .navbar-toggler {
+        border: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .languageBox {
+        color: #fff;
+        padding: 1rem 0.5rem 0.5rem;
+
+        @include b768 {
+            padding: 0;
+        }
+
+        a {
+            color: #FFF;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+
+    #mainNavbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        background: $green;
+
+        svg {
+            fill: #fff;
+        }
+
+        .cls-1 {
+            transition: fill .5s ease;
+            /* 添加動畫效果 */
+        }
+    }
+
+    .navbar {
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar-nav {
+        .nav-item {
+
+            padding: 0 .5rem;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: $yellow;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s ease;
+                border: none;
+            }
+
+            &:hover::after,
+            &.focus::after {
+                // 如果下拉選單打開，保持下底線
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+
+        .dropdown-menu {
+            background-color: $green;
+            transition: background-color 0.3s ease;
+
+            .dropdown-item {
+                position: relative;
+                transition: color 0.3s ease;
+                color: #fff;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 2px;
+                    background-color: $yellow;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            }
+        }
+    }
+
+    // 定義垂直抖動的關鍵影格
+    @keyframes shake-vertical {
+        2% {
+            transform: translate(0, -3px) rotate(0);
+        }
+
+        4% {
+            transform: translate(0, -9px) rotate(0);
+        }
+
+        6% {
+            transform: translate(0, 1px) rotate(0);
+        }
+
+        8% {
+            transform: translate(0, -5px) rotate(0);
+        }
+
+        10% {
+            transform: translate(0, 1px) rotate(0);
+        }
+
+        12% {
+            transform: translate(0, -1px) rotate(0);
+        }
+
+        14% {
+            transform: translate(0, -6px) rotate(0);
+        }
+
+        16% {
+            transform: translate(0, 0px) rotate(0);
+        }
+
+        18% {
+            transform: translate(0, 0px) rotate(0);
+        }
+
+        20% {
+            transform: translate(0, 2px) rotate(0);
+        }
+
+        22% {
+            transform: translate(0, 10px) rotate(0);
+        }
+
+        24% {
+            transform: translate(0, 5px) rotate(0);
+        }
+
+        26% {
+            transform: translate(0, 3px) rotate(0);
+        }
+
+        28% {
+            transform: translate(0, 3px) rotate(0);
+        }
+
+        30% {
+            transform: translate(0, 5px) rotate(0);
+        }
+
+        32% {
+            transform: translate(0, 5px) rotate(0);
+        }
+
+        34% {
+            transform: translate(0, -6px) rotate(0);
+        }
+
+        36% {
+            transform: translate(0, 6px) rotate(0);
+        }
+
+        38% {
+            transform: translate(0, -9px) rotate(0);
+        }
+
+        40% {
+            transform: translate(0, 6px) rotate(0);
+        }
+
+        42% {
+            transform: translate(0, 3px) rotate(0);
+        }
+
+        44% {
+            transform: translate(0, 3px) rotate(0);
+        }
+
+        46% {
+            transform: translate(0, 6px) rotate(0);
+        }
+
+        48% {
+            transform: translate(0, -9px) rotate(0);
+        }
+
+        50% {
+            transform: translate(0, 7px) rotate(0);
+        }
+
+        52% {
+            transform: translate(0, 9px) rotate(0);
+        }
+
+        54% {
+            transform: translate(0, 3px) rotate(0);
+        }
+
+        56% {
+            transform: translate(0, -1px) rotate(0);
+        }
+
+        58% {
+            transform: translate(0, -2px) rotate(0);
+        }
+
+        60% {
+            transform: translate(0, -6px) rotate(0);
+        }
+
+        62% {
+            transform: translate(0, -5px) rotate(0);
+        }
+
+        64% {
+            transform: translate(0, 4px) rotate(0);
+        }
+
+        66% {
+            transform: translate(0, -4px) rotate(0);
+        }
+
+        68% {
+            transform: translate(0, -2px) rotate(0);
+        }
+
+        70% {
+            transform: translate(0, -8px) rotate(0);
+        }
+
+        72% {
+            transform: translate(0, -6px) rotate(0);
+        }
+
+        74% {
+            transform: translate(0, -4px) rotate(0);
+        }
+
+        76% {
+            transform: translate(0, 0px) rotate(0);
+        }
+
+        78% {
+            transform: translate(0, 7px) rotate(0);
+        }
+
+        80% {
+            transform: translate(0, -6px) rotate(0);
+        }
+
+        82% {
+            transform: translate(0, 10px) rotate(0);
+        }
+
+        84% {
+            transform: translate(0, -4px) rotate(0);
+        }
+
+        86% {
+            transform: translate(0, 10px) rotate(0);
+        }
+
+        88% {
+            transform: translate(0, -1px) rotate(0);
+        }
+
+        90% {
+            transform: translate(0, 1px) rotate(0);
+        }
+
+        92% {
+            transform: translate(0, 9px) rotate(0);
+        }
+
+        94% {
+            transform: translate(0, -4px) rotate(0);
+        }
+
+        96% {
+            transform: translate(0, -8px) rotate(0);
+        }
+
+        98% {
+            transform: translate(0, 4px) rotate(0);
+        }
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0);
+        }
+    }
+
+    // 凍結與狀態控制
+    .shake-freeze,
+    .shake-constant.shake-constant--hover:hover,
+    .shake-trigger:hover .shake-constant.shake-constant--hover {
+        animation-play-state: paused;
+    }
+
+    .shake-freeze:hover,
+    .shake-trigger:hover .shake-freeze {
+        animation-play-state: running;
+    }
+
+    // 主樣式：垂直抖動
+    .shake-vertical {
+        display: inherit;
+        transform-origin: center center;
+        animation-name: shake-vertical;
+        animation-duration: 40000ms;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+
+    }
+
+    .banner {
+        background: linear-gradient(180deg, #004632, #001A12);
+        position: relative;
+        height: 35rem;
+        overflow: initial;
+
+        .eTINPO-bn-w {
+            position: absolute;
+            max-width: 100%;
+            top: 2rem;
+            z-index: 4;
+            height: 135vw;
+            object-fit: cover;
+            object-position: center;
+
+            @include b768 {
+                object-fit: contain;
+                object-position: top;
+                height: auto;
+                width: 100%;
+                top: 3rem;
+            }
+
+            @include b992 {}
+
+        }
+
+        .eTINPO-bn-g {
+            position: absolute;
+            max-width: 100%;
+            top: 10%;
+            z-index: 3;
+            height: 135vw;
+            object-fit: cover;
+            object-position: center;
+
+
+            @include b768 {
+                object-fit: contain;
+                object-position: top;
+                height: auto;
+                width: 100%;
+            }
+
+            @include b992 {}
+
+        }
+
+        .bannerTextGroup {
+            position: relative;
+
+        }
+
+        .banner01 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner02 {
+            position: relative;
+            top: 90px;
+            left: 3rem;
+            z-index: 10;
+
+            @include b768 {
+                position: absolute;
+                top: 80px;
+                left: 52%;
+            }
+        }
+
+        .banner03 {
+            position: absolute;
+            z-index: 10;
+            bottom: 10%;
+            right: 3rem;
+
+            @include b768 {
+                position: absolute;
+                z-index: 10;
+                bottom: 5%;
+                right: 10%;
+            }
+
+            @include b1024 {}
+        }
+    }
+
+
+    .bannerProduct {
+        background: url('../image/product-bg-100.jpg') right bottom;
+        background-size: cover;
+
+
+        .ProductSlogan {
+            position: relative;
+            overflow: hidden;
+            color: #FFF;
+            min-height: 45vh;
+
+            .ProductBn {
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                right: -100%;
+                width: auto;
+
+                @include b768 {
+                    top: 0;
+                    right: 0;
+                }
+
+                @include b1024 {
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        .bannerText {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            bottom: 0;
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+
+            @include b768 {
+                margin-left: 5rem;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: .8rem;
+                padding-top: 1rem;
+            }
+        }
+    }
+
+
+    .technologyFeature {
+        // Mobile carries the banner's dark green into the pale content area,
+        // then reaches solid brand green before the overlapping partner block.
+        background: linear-gradient(180deg, #001A12 0%, #D5DEE1 8%, #D5DEE1 72%, #004632 96%, #004632 100%);
+        background-color: #004632;
+        position: relative;
+
+        @include b768 {
+            background: linear-gradient(180deg, #001A12 0%, #D5DEE1 10%, #D5DEE1 70%, #004632 100%);
+        }
+
+    }
+
+    .feature {
+        color: #323232;
+        padding: 5rem 3rem 8rem;
+
+        @include b768 {
+            padding: 20rem 0 37rem 0;
+        }
+
+        .container {
+            max-width: 980px;
+        }
+
+
+
+        .featureTheme {
+            max-width: 50rem;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-top: 2.75rem;
+
+            @include b768 {
+                text-align: left;
+                margin-top: 0;
+            }
+
+            &:nth-child(even) {
+                margin-top: 2.75rem;
+
+                @include b768 {
+                    margin-top: 10rem;
+                }
+            }
+
+            .featureText {
+                margin-top: 1rem;
+
+                h4 {
+                    font-size: 1.2rem;
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 0;
+
+                    @include b768 {
+                        font-size: 2rem;
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+        }
+
+        .row:first-child .featureTheme:first-child {
+            margin-top: 0;
+        }
+
+        .featurePhoto {
+            img {
+
+                width: 90px;
+
+                @include b768 {
+
+                    width: auto;
+                }
+            }
+        }
+
+        h4 {
+            font-family: "Inter", sans-serif;
+            font-style: italic;
+            font-weight: 500;
+            color: $green;
+            font-size: 4rem;
+
+
+            @include b768 {
+                font-size: 3rem;
+            }
+        }
+
+        span {
+            font-family: "Noto Sans", sans-serif;
+            font-style: normal;
+            color: $green;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+
+        p {
+            padding-top: .1rem;
+            text-align: justify;
+            font-size: 1rem;
+            color: #595757;
+            letter-spacing: 1px;
+
+        }
+
+    }
+
+    .featureCloth {
+        position: absolute;
+        bottom: -13rem;
+        width: 100%;
+        overflow-x: clip;
+
+        @include b768 {
+            bottom: -22rem;
+        }
+
+        .photo_01 {
+            position: absolute;
+            max-width: 100%;
+            width: 100%;
+            transform: scale(1.5);
+            transform-origin: center;
+            right: 0;
+            bottom: -6rem;
+            z-index: 2;
+            object-fit: cover;
+            object-position: center;
+            height: 20rem;
+
+            @include b768 {
+                max-width: 90%;
+                width: 90%;
+                transform: scale(1);
+                right: 0;
+                height: auto;
+                object-fit: contain;
+                object-position: top;
+            }
+        }
+
+        .photo_02 {
+            position: relative;
+            width: 100%;
+            top: 3rem;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            height: 35vh;
+            object-fit: cover;
+            object-position: right;
+
+            @include b768 {
+                bottom: 0;
+                height: auto;
+                object-fit: contain;
+                object-position: top;
+            }
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        padding-top: 2rem;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        transition: transform 0.5s, filter 0.5s;
+    }
+
+    .swiper-slide-active .icon {
+        transform: scale(1.5);
+        filter: grayscale(0);
+    }
+
+    /*     .swiper-slide .icon {
+        filter: grayscale(100%);
+    } */
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 10px;
+        /* 設定箭頭的寬度 */
+        height: 40px;
+        /* 設定箭頭的高度 */
+        background-size: 100% 100%;
+        /* 確保背景圖充滿容器 */
+        color: $green;
+
+        &::after {
+            font-size: 20px !important;
+        }
+    }
+
+
+
+    .technology {
+        letter-spacing: .1rem;
+        text-align: justify;
+        padding-bottom: 1rem;
+
+        @include b768 {
+            padding-top: 15rem;
+            padding-bottom: 10rem;
+        }
+
+        /*img {
+            max-width: 100%;
+
+            @include b768 {
+                max-width: 434rem;
+            }
+        }*/
+        .technologyContent {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: -20rem auto 0;
+            max-width: 90%;
+
+            @include b768 {
+                position: absolute;
+                top: 15rem;
+                flex-direction: row;
+                max-width: 80%;
+
+            }
+        }
+
+        .technologyPhoto {
+            position: relative;
+
+            @include b768 {
+                padding-bottom: 0;
+            }
+
+            .photo_01 {
+                position: relative;
+                max-width: 100%;
+                width: 100%;
+                height: 140vw;
+                right: 0;
+                top: -10rem;
+                z-index: 2;
+                object-fit: cover;
+                object-position: center;
+                display: none;
+
+                @include b768 {
+                    display: block;
+                    position: relative;
+                    right: 0;
+                    top: -15rem;
+                    height: auto;
+                    object-fit: contain;
+                    object-position: top;
+                    z-index: 1;
+                }
+            }
+
+            .photo_02 {
+                position: relative;
+                max-width: 100%;
+                left: 0;
+                top: 0;
+                z-index: 1;
+
+                @include b768 {
+                    position: absolute;
+                    left: 0;
+                    top: 7rem;
+                    height: auto;
+                    z-index: 2;
+                }
+            }
+
+            .technologySlogan {
+                position: relative;
+                top: 4rem;
+                left: 5px;
+                z-index: 9;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @include b768 {
+                    position: absolute;
+                    align-items: normal;
+                }
+
+                img {
+                    max-width: 100%;
+
+                    &.technologySvg {
+                        margin-left: 0;
+                        margin-top: 1rem;
+
+                        @include b768 {
+                            margin-left: 160px;
+                            margin-top: 2rem;
+                        }
+                    }
+
+                    &.sloganSvg {
+                        margin-left: 0;
+
+                        @include b768 {
+                            margin-left: 225px;
+                        }
+                    }
+
+                }
+
+                @include b768 {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+            }
+        }
+
+
+        .technologyText {
+            position: relative;
+            bottom: 3rem;
+            right: 0;
+            top: 0;
+            background: rgba($color: #FFC200, $alpha: 0.7);
+            max-width: 380px;
+            width: 90%;
+            margin: 6rem auto 0;
+            z-index: 10;
+            font-size: .8rem;
+            text-align: justify;
+            padding: 30px 1.5rem;
+            color: #fff;
+
+            @include b768 {
+                position: relative;
+                margin: auto;
+                bottom: auto;
+                right: auto;
+                top: 400px;
+                width: 95%;
+            }
+
+            h3 {
+                font-family: "Inter", sans-serif;
+                font-weight: 700;
+                padding-bottom: 1rem;
+                font-size: 1.6rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+
+        }
+    }
+
+    .homeproduct {
+        background: linear-gradient(180deg, #004632 0%, #004632 5%, #D5DEE1 10%, #D5DEE1 100%);
+        padding: 0 3rem 30rem;
+        position: relative;
+
+        @include b768 {
+            padding: 60px 0 25rem;
+        }
+
+        .productPhoto {
+            position: relative;
+            max-width: 570px;
+            text-align: center;
+
+            img {
+                max-width: 90%;
+            }
+
+        }
+
+        .btn {
+            transform: scale(1);
+            width: 120px;
+            margin-right: 1rem;
+
+            @include b768 {
+                transform: scale(1);
+                width: 100px;
+                margin-right: 0;
+            }
+        }
+
+        a {
+            text-align: right;
+        }
+
+
+        .product_01 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 550px;
+            margin: auto;
+            padding-top: 5rem;
+
+            .productPhoto {
+
+                .productText {
+                    position: absolute;
+                    bottom: 5rem;
+                    top: 7rem;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+
+                    @include b768 {
+                        top: 0rem;
+                        bottom: 0;
+
+                    }
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                color: #595857;
+                font-weight: 600;
+
+            }
+
+        }
+
+        .product_02 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 5rem;
+
+            @include b768 {
+                padding-top: 15rem;
+
+            }
+
+            .productPhoto {
+
+                .productText {
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+                }
+            }
+
+            p {
+                font-size: .8rem;
+                color: #595857;
+                font-weight: 600;
+
+            }
+        }
+
+        .product_03 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 5rem;
+
+            @include b768 {
+                align-items: flex-start;
+                padding-top: 0;
+            }
+
+            .productPhoto {
+
+                .productText {
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+                }
+            }
+
+            .gloves {
+                padding-left: 0;
+                padding-right: 8rem;
+                margin-top: 0rem;
+                z-index: 9;
+
+                @include b768 {
+                    padding-left: 20rem;
+                    margin-top: -4rem;
+                }
+            }
+
+            p {
+                font-size: .8rem;
+                color: #595857;
+                font-weight: 600;
+                margin-top: 0;
+
+
+            }
+
+        }
+
+        .product_04 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 5rem;
+
+            @include b768 {
+                padding-top: 15rem;
+            }
+
+            img {
+                max-width: 90%;
+            }
+
+            .productPhoto {
+                .productText {
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+
+                    @include b768 {
+                        top: 10rem;
+
+                    }
+                }
+            }
+
+            p {
+                font-size: .8rem;
+                color: #595857;
+                font-weight: 600;
+            }
+        }
+
+        .actionTeam {
+            position: relative;
+
+            .photo_01 {
+                position: absolute;
+                right: 0;
+                top: 3rem;
+            }
+
+            .actionGroup {
+                margin: auto;
+                position: relative;
+                max-width: 950px;
+
+                .photo_01 {
+                    position: absolute;
+                    right: 0;
+                    bottom: 5rem;
+                }
+
+                .action {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 3rem auto;
+                    padding: 0;
+                    width: 100%;
+                    position: relative;
+                    z-index: 9;
+                    background: #fff;
+
+
+                    @include b768 {
+                        padding: 0 1.5rem;
+                        background: transparent;
+
+                    }
+
+                    &:nth-child(even) {
+                        flex-direction: column;
+                    }
+
+                    img {
+                        max-height: 100%;
+
+                        @include b768 {
+                            max-height: 133px;
+
+                        }
+                    }
+
+                    @include b768 {
+                        flex-direction: row;
+                        width: 100%;
+                        margin: 3rem 0;
+
+                        &:nth-child(even) {
+                            flex-direction: row-reverse;
+                            justify-content: end;
+
+                        }
+                    }
+
+
+                    .actionText {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding: 1.5rem 0.5rem 0.5rem;
+                        background: #FFF;
+                        width: 100%;
+                        max-width: 100%;
+                        max-height: 100%;
+
+                        @include b768 {
+                            width: 350px;
+                            padding: 1rem 2rem 0 .8rem;
+                            max-height: 133px;
+                        }
+
+                        .btn {
+                            display: flex;
+                            width: 100%;
+                            justify-content: flex-end;
+
+                            img {
+                                width: 80px;
+
+                                @include b768 {
+                                    width: 150px;
+                                }
+                            }
+                        }
+
+
+                        h4 {
+                            font-family: "Inter", sans-serif;
+                            font-weight: 700;
+                            color: $green;
+                            font-size: 1.3rem;
+                            text-align: left;
+                            letter-spacing: 1px;
+                            padding-left: 60px;
+                            position: relative;
+
+                            @include b768 {
+                                padding-left: 80px;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 50px;
+                                height: 50px;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+
+                                @include b768 {
+                                    width: 70px;
+                                    height: 70px;
+                                }
+                            }
+
+                            span {
+                                display: block;
+                                font-family: "Noto Sans TC", sans-serif;
+                                font-weight: 300;
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                            }
+                        }
+
+                        p {
+                            color: #595757;
+                            font-size: .9rem;
+                            padding-top: 1rem;
+
+                            @include b768 {
+                                font-size: .85rem;
+                                padding-top: 0;
+                            }
+                        }
+                    }
+
+                    &:nth-child(1) .actionText h4::after {
+                        background-image: url("../image/icon_product.png");
+                    }
+
+                    &:nth-child(2) .actionText h4::after {
+                        background-image: url("../image/icon_technology.png");
+                    }
+
+                    &:nth-child(3) .actionText h4::after {
+                        background-image: url("../image/icon_contact.png");
+                    }
+
+                }
+            }
+        }
+    }
+
+    .partner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: -2rem;
+        padding-bottom: 5rem;
+        z-index: 10;
+
+        @include b768 {
+            margin-left: 20rem;
+            margin-top: -10rem;
+
+        }
+
+        img {
+            margin-bottom: 1rem;
+            max-width: 98%;
+
+            @include b768 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .partnerGroup {
+            position: relative;
+            padding-top: 3rem;
+
+            @include b768 {
+                padding-top: 0;
+            }
+
+            .partnerSlogan {
+                position: relative;
+            }
+
+            .partnerSloganEn {
+                position: relative;
+            }
+        }
+
+        .partnerText {
+            background: rgba($color: #FFC200, $alpha: 0.7);
+            max-width: 420px;
+            z-index: 10;
+            font-size: .8rem;
+            text-align: justify;
+            margin-top: 1rem;
+            padding: 30px 1.5rem;
+            color: #fff;
+
+            @include b768 {
+                margin-top: 2rem;
+                margin-left: 50px;
+                padding: 30px 15px;
+            }
+
+            h3 {
+                font-family: "Inter", sans-serif;
+                font-weight: 700;
+                padding-bottom: 1rem;
+                font-size: 1.6rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+        }
+    }
+
+
+    .advantage {
+        background: $gray2;
+        padding: 5rem 2rem;
+        text-align: center;
+
+        @include b768 {
+            padding: 5rem 0;
+
+        }
+
+        h4 {
+            color: $green;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            padding: 2rem 0 2rem 0;
+
+            span {
+                font-size: 1.2rem;
+                color: $green;
+                letter-spacing: 1px;
+                font-weight: 800;
+
+                &.left {
+                    padding-bottom: 2rem;
+                    padding-right: 1rem;
+                }
+
+                &.right {
+                    padding-top: 2rem;
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+        .featurePhoto img {
+            border-radius: 50%;
+            max-height: 630px;
+        }
+
+        .featureItem {
+
+            h5 {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.8rem;
+                color: $green;
+                line-height: 1.5rem;
+                align-items: center;
+
+                span {
+                    color: #fff;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    padding-top: .5rem;
+                }
+            }
+
+            p {
+                color: #000;
+                font-size: 1rem;
+                max-width: 30rem;
+                margin: 3rem auto;
+
+            }
+
+
+        }
+
+        .feature-swiper {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+
+            h4 {
+                padding: 2rem 0 0 0;
+            }
+
+            p {
+                margin: .8rem auto;
+                font-size: .8rem;
+                max-width: 35rem;
+            }
+        }
+
+    }
+
+
+    .Material {
+        background: $gray;
+        padding: 5rem 0;
+        position: relative;
+
+        .col-12 {
+            padding: 0;
+        }
+
+        h4 {
+            color: $green;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 1.8rem;
+
+            span {
+                color: #FFF;
+                font-size: .8rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.5rem;
+            padding: 2rem 2rem;
+
+            @include b768 {
+                padding: 2rem 0;
+            }
+        }
+
+        .matFab {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 385px;
+
+            .fabPhoto {
+                position: absolute;
+                height: 385px;
+                right: 0;
+
+                @include b768 {
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+        }
+
+        .matIconbg {
+            max-width: 60rem;
+            margin: auto;
+        }
+
+        .matIcon {
+            text-align: center;
+
+            p {
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: .5rem;
+            }
+        }
+
+        .arrowicon {
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+
+    .purpose {
+        background: $gray;
+        padding: 8rem 2rem 0;
+
+        @include b768 {
+            padding-top: 8rem;
+        }
+
+        h4 {
+            color: $green;
+            font-size: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 420px;
+            margin: auto;
+
+            span {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 1.5rem;
+            }
+        }
+
+        p {
+            padding: 3rem 0;
+            max-width: 520px;
+            margin: auto;
+            font-weight: 500;
+
+        }
+
+        .purposeitem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+
+            .img-fluid {
+                max-width: 50%;
+
+                @include b768 {
+                    max-width: 100%;
+                }
+            }
+
+
+            @include b768 {
+                &:nth-child(odd) {
+                    margin-left: 10%;
+                }
+
+                &:nth-child(even) {
+                    margin-right: 10%;
+                }
+            }
+
+            .purposeText {
+                margin-left: 2rem;
+
+                h5 {
+                    letter-spacing: 2px;
+                    font-size: 1.2rem;
+
+                }
+
+                p {
+                    padding: .7rem 0;
+                    max-width: 290px;
+                    font-size: 1rem;
+                }
+            }
+
+            .purposeBtn button {
+                background: $green;
+                color: #fff;
+                border-radius: 25px;
+                padding: .5rem 1rem;
+                box-shadow: none;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: .8rem;
+
+                @include b768 {
+                    font-size: 1rem;
+                }
+
+                .arrow {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    background-color: $yellow;
+                    /* 定義圖標的顏色 */
+                    mask-image: url('../image/more-arrow.svg');
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                }
+            }
+        }
+    }
+
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #fff;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        z-index: 98;
+
+        .footer {
+            background: $green;
+        }
+
+        .footerBg {
+            position: absolute;
+            top: -21rem;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .footerBtn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include b768 {
+                padding-bottom: 1rem;
+            }
+
+        }
+
+        .footerLocation {
+            border-bottom: 1px solid #fff;
+            font-size: 10px;
+            padding-bottom: 2.5rem;
+            width: 100%;
+
+            @include b768 {
+                border: none;
+                font-size: 12px;
+                padding-bottom: 0;
+                width: auto;
+            }
+        }
+
+        .footerLink {
+            letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            width: 100%;
+
+            .footerBtn {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            a {
+                padding-left: 0;
+
+                @include b768 {
+                    padding-left: 15px;
+                    text-align: left;
+                    flex: unset;
+                }
+            }
+
+            .socialMedia {
+                margin-top: 1rem;
+                width: 100%;
+                text-align: right;
+
+                @include b768 {
+                    width: auto;
+                }
+            }
+
+            @include b768 {
+                width: auto;
+
+                .footerBtn {
+                    width: auto;
+                    display: block;
+                }
+            }
+        }
+
+        .copyRight {
+            background: $gray3;
+            color: $green;
+            text-align: center;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 10px;
+        }
+
+
+        .eTinpoLogo {
+            margin-top: 1rem;
+
+            @include b768 {
+                margin-top: 0;
+            }
+
+            img {
+                max-width: 220px;
+            }
+        }
+
+    }
+
+/* 2026-09 eTINPO revision fixes */
+.navbar-nav .nav-link,
+.navbar-nav .dropdown-menu .dropdown-item,
+.footer .footerBtn a {
+  white-space: nowrap !important;
+}
+.bannerTechs .bannerText .b-left-en {
+  max-width: 560px;
+}
+@media (max-width: 991.98px) {
+  .navbar-nav .dropdown-menu {
+    position: static;
+  }
+}
+
+/* 2026-09 staged motion system: decorative float + looping split type */
+@keyframes etinpo-float-orbit {
+  0%, 100% { translate: 0 0; }
+  24% {
+    translate: var(--etinpo-float-x-a, 0) var(--etinpo-float-y-a, -10px);
+  }
+  52% {
+    translate: var(--etinpo-float-x-b, 0) var(--etinpo-float-y-b, -14px);
+  }
+  77% {
+    translate: var(--etinpo-float-x-c, 0) var(--etinpo-float-y-c, 3px);
+  }
+}
+
+.etinpo-float {
+  animation: etinpo-float-orbit var(--etinpo-float-duration, 8s) ease-in-out var(--etinpo-float-delay, 0s) infinite;
+  will-change: translate;
+}
+
+.banner,
+.technology .technologyPhoto,
+.application .applicationBanner {
+  overflow-x: clip;
+}
+
+.float-index-technology { --etinpo-float-x-a: 8px; --etinpo-float-x-b: -4px; --etinpo-float-x-c: -2px; --etinpo-float-y-a: -16px; --etinpo-float-y-b: -22px; --etinpo-float-y-c: 5px; --etinpo-float-duration: 7.1s; --etinpo-float-delay: -1.4s; }
+.float-index-feature { --etinpo-float-y-a: -11px; --etinpo-float-y-b: -16px; --etinpo-float-y-c: 4px; --etinpo-float-duration: 9.4s; --etinpo-float-delay: -3.1s; }
+.float-application-clothes { --etinpo-float-x-a: 8px; --etinpo-float-x-b: -4px; --etinpo-float-x-c: -2px; --etinpo-float-y-a: -15px; --etinpo-float-y-b: -21px; --etinpo-float-y-c: 5px; --etinpo-float-duration: 6.7s; --etinpo-float-delay: -2.2s; }
+.float-application-apparel { --etinpo-float-y-a: -8px; --etinpo-float-y-b: -11px; --etinpo-float-y-c: 3px; --etinpo-float-duration: 6.4s; --etinpo-float-delay: -1.1s; }
+.float-application-footwear { --etinpo-float-y-a: -10px; --etinpo-float-y-b: -14px; --etinpo-float-y-c: 3px; --etinpo-float-duration: 7.3s; --etinpo-float-delay: -2.7s; }
+.float-application-gloves { --etinpo-float-y-a: -7px; --etinpo-float-y-b: -10px; --etinpo-float-y-c: 2px; --etinpo-float-duration: 8.2s; --etinpo-float-delay: -0.6s; }
+.float-application-medical { --etinpo-float-y-a: -12px; --etinpo-float-y-b: -16px; --etinpo-float-y-c: 4px; --etinpo-float-duration: 9.1s; --etinpo-float-delay: -4.1s; }
+.float-contact-cloth { --etinpo-float-y-a: -11px; --etinpo-float-y-b: -15px; --etinpo-float-y-c: 3px; --etinpo-float-duration: 8.6s; --etinpo-float-delay: -2.9s; }
+
+.product .productTop {
+  position: relative;
+  overflow: hidden;
+  background: none;
+  isolation: isolate;
+}
+
+.product .productTop::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -30px;
+  pointer-events: none;
+  background: url("../image/product/product-bn.png") top left / 150% auto no-repeat;
+  animation: etinpo-product-background-float 8.8s ease-in-out -2.1s infinite;
+  will-change: transform;
+}
+
+.product .productTopText { position: relative; z-index: 1; }
+
+@keyframes etinpo-product-background-float {
+  0%, 100% { transform: translate3d(0, -16px, 0); }
+  25% { transform: translate3d(0, -28px, 0); }
+  52% { transform: translate3d(0, -37px, 0); }
+  78% { transform: translate3d(0, -12px, 0); }
+}
+
+@media (min-width: 768px) {
+  .product .productTop::before { background-position: top right; background-size: contain; }
+}
+
+.bannerTechs--en .bannerText .b-left-en {
+  align-self: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.technologies-page--en .features .applicationText .techItem .techItemText h5 {
+  width: 100%;
+  text-align: center;
+}
+
+.responsibility-page--en .responsibility-swiper h4 {
+  width: 100%;
+  text-align: center;
+}
+
+.contact .contactTheme .contactText .contactInformation p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact .contactTheme .contactText .contactInformation p img {
+  flex: 0 0 25px;
+  width: 25px;
+  max-width: 25px;
+  height: 34px;
+  object-fit: contain;
+  margin: 0;
+}
+
+.contact .contactTheme .contactText .contactInformation p span {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .application .application-item--apparel .techItemText p { width: 500px; }
+  .application .application-item--footwear .techItemText p { width: 600px; }
+  .application .application-item--gloves .techItemText p { width: 400px; }
+  .application .application-item--medical .techItemText p { width: 550px; }
+
+  .application .application-item .techItemText p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .float-index-technology,
+  .float-application-clothes {
+    --etinpo-float-x-a: 4px;
+    --etinpo-float-x-b: -2px;
+    --etinpo-float-x-c: -1px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bannerTechs--en .bannerText .b-left-en { flex: 0 1 42%; width: 42%; max-width: 560px; }
+  .bannerTechs--en .bannerText .b-right { flex: 0 1 52%; width: 52%; max-width: 645px; min-width: 0; margin-left: 2%; }
+}
+
+.partners--en .partnersTheme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.partners--en .partnersTheme .partners_slogan {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  background: transparent;
+  text-align: center;
+  line-height: 1.65;
+  box-sizing: border-box;
+}
+
+.partners--en .partnersTheme .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.partners--en .partnersTheme .title h3 { margin: 0; line-height: 1; }
+.partners--en .partnersTheme .title > p {
+  width: calc(100% - 3rem);
+  max-width: 655px;
+  margin: 1.75rem auto 0;
+  line-height: 1.65;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .partners--en .partnersTheme { width: min(980px, calc(100% - 3rem)); align-items: stretch; }
+  .partners--en .partnersTheme .partners_slogan { padding: 0 2rem; }
+  .partners--en .partnersTheme .title { align-items: flex-start; padding-top: 2.75rem; }
+  .partners--en .partnersTheme .title > p { width: 100%; margin: 2.25rem 0 0; }
+}
+
+.YearinReview .year p.year-copy-wide {
+  width: 100%;
+  max-width: 25rem;
+}
+
+/* Final responsive polish: keep these rules page-scoped to avoid cross-page regressions. */
+@keyframes product-cloth-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(0, -8px, 0); }
+  50% { transform: translate3d(0, 0, 0); }
+  75% { transform: translate3d(0, 8px, 0); }
+}
+
+.productSlogan .sloganCloth.product-cloth-float {
+  animation: product-cloth-float 14s cubic-bezier(.45, 0, .55, 1) infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.about-page .bannerAbout .bannerText .bannerText01 {
+  filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, .62));
+}
+
+.YearinReview .year02,
+.YearinReview .year03 {
+  position: relative;
+  margin-top: -2px;
+}
+
+footer > svg {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: -2px;
+  transform: translateY(1px);
+}
+
+footer .footer {
+  position: relative;
+  margin-top: -1px;
+}
+
+@media (min-width: 768px) {
+  .about-page--zh .principles .split-word-ecological {
+    margin-top: 5.5rem;
+  }
+}
+
+/* Chinese About copy is shorter than English, so match the visual cloth
+   height without moving any shared artwork or the English layout. */
+@media (max-width: 767.98px) {
+  .about-page--zh .newtechnology .AboutBn02 {
+    bottom: 27rem;
+  }
+
+  .about-page--zh .principles .smallItems {
+    top: -15%;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-page .eco .colth5 {
+    top: 50px;
+  }
+
+  .about-page--zh .newtechnology .AboutBn02 {
+    bottom: 6rem;
+  }
+
+  .about-page--zh .principles .smallItems {
+    top: 5rem;
+  }
+}
+
+/* On phones, let the shared footer arc overlap by exactly its responsive
+   SVG height. This removes the translucent lens between pic2 and the arc. */
+@media (max-width: 767.98px) {
+  .technologies-page .technologiesFooter {
+    padding-bottom: 0;
+  }
+
+  .technologies-page footer {
+    position: relative;
+    bottom: auto;
+    margin-top: calc(-22.14vw - 1px);
+  }
+}
+
+/* The animated banner SVGs intentionally extend beyond their own viewBox at
+   tablet widths. Contain that artwork without changing its composition. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .technologies-page {
+    overflow-x: hidden;
+  }
+
+  .technologies-page .bannerTechs {
+    overflow: hidden;
+  }
+}
+
+/* adventures.svg needs vertical room for its split/float animation. The
+   negative margins cancel only the new transparent canvas, so the visible
+   title stays in the exact same layout position at every width. */
+.technologies-page .features .featuresTitle {
+  overflow: visible;
+}
+
+.technologies-page .features .featuresTitle .adventures {
+  vertical-align: top;
+  margin-top: max(-40px, -4.73vw);
+  margin-bottom: max(-40px, -4.73vw);
+}
+
+/* Keep the Chinese partners composition inside tablet viewports. */
+@media (min-width: 768px) {
+  .partners:not(.partners--en) .partnersTheme {
+    width: min(980px, calc(100% - 3rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .productSlogan .sloganCloth.product-cloth-float {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .YearinReview .year p.year-copy-wide { width: 25rem; }
+}
+
+/* Product cloth composition: restore the original rising arc between the
+   landscape and its supporting copy without changing the supplied artwork. */
+.product-page {
+  overflow-x: clip;
+}
+
+.product-page .productSlogan {
+  isolation: isolate;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Keep the PP artwork/copy above the cloth when its transparent canvas
+   intentionally rises across the section divider. */
+.product-page .productPP {
+  position: relative;
+  z-index: 2;
+}
+
+/* The replacement artwork keeps the original 1280 x 678 composition at the
+   same scale and top position; its additional pixels extend downward only. */
+.product-page .productSlogan .sloganCloth {
+  top: calc(135% - 3rem - 63vw);
+  right: 0;
+  bottom: auto;
+  width: 118.94%;
+  height: auto;
+  object-fit: contain;
+  object-position: top right;
+}
+
+.product-page .functionText {
+  z-index: 10;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.product-page .functionText::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: -40px;
+  width: 100%;
+  height: 42px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: #D5DEE1;
+  box-shadow: 0 0 0 2px #D5DEE1;
+  pointer-events: none;
+}
+
+.product-page .functionText p {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-20px);
+}
+
+@media (min-width: 768px) {
+  .product-page .productSlogan .sloganCloth {
+    top: calc(100% + 0rem - 52.96875vw);
+    width: 100%;
+  }
+
+  /* The English first row hides slogan02, making the shared slogan03 sit
+     132px higher than the Chinese layout. Restore the same white-cloth
+     landing position without changing either mobile layout. */
+  .product-page--en .productSlogan .slogan03 {
+    margin-top: 8.25rem;
+  }
+
+  .product-page .functionText::before {
+    top: max(-130px, -8.5vw);
+    height: min(130px, 8.5vw);
+  }
+
+  .product-page .functionText p {
+    transform: translateY(max(-125px, -7.5vw));
+  }
+}
+
+.banner .banner02-lines {
+  display: block;
+  width: 244px;
+  height: auto;
+}
+
+/* Parallax comparison — Application uses a fixed wave mask (scheme A). */
+.application-page {
+  overflow-x: clip;
+}
+
+.application-page .applicationBanner {
+  --etinpo-parallax-y: 0px;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.application-page .applicationBanner_parallaxMask {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 95vw;
+  overflow: hidden;
+  -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDk4Nyc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDBIMTI4MEwxMjc5IDk1MUwxMjYzIDk2M0wxMjQ3IDk2OEwxMjMxIDk2N0wxMjE1IDk1OUwxMTk5IDk0NUwxMTgzIDkyOEwxMTY3IDkxMUwxMTUxIDg5N0wxMTM1IDg4N0wxMTE5IDg4MUwxMTAzIDg3OUwxMDg3IDg3OUwxMDcxIDg4MEwxMDU1IDg4NEwxMDM5IDg4OEwxMDIzIDg5MkwxMDA3IDg5N0w5OTEgOTAyTDk3NSA5MDdMOTU5IDkxMUw5NDMgOTE1TDkyNyA5MThMOTExIDkyMUw4OTUgOTIyTDg3OSA5MjNMODYzIDkyM0w4NDcgOTIyTDgzMSA5MTlMODE1IDkxNkw3OTkgOTExTDc4MyA5MDRMNzY3IDg5N0w3NTEgODg4TDczNSA4NzhMNzE5IDg2OUw3MDMgODU5TDY4NyA4NTBMNjcxIDg0MEw2NTUgODMxTDY0MCA4MjJMNjI0IDgxMkw2MDggODAyTDU5MiA3OTFMNTc2IDc4M0w1NjAgNzc2TDU0NCA3NzBMNTI4IDc2NUw1MTIgNzYwTDQ5NiA3NTZMNDgwIDc1Mkw0NjQgNzQ5TDQ0OCA3NDZMNDMyIDc0NUw0MTYgNzQ0TDQwMCA3NDNMMzg0IDc0MkwzNjggNzQyTDM1MiA3NDFMMzM2IDc0MEwzMjAgNzM5TDMwNCA3MzdMMjg4IDczNUwyNzIgNzMyTDI1NiA3MjhMMjQwIDcyM0wyMjQgNzE2TDIwOCA3MDdMMTkyIDY5NkwxNzYgNjg1TDE2MCA2NzZMMTQ0IDY2OUwxMjggNjYyTDExMiA2NTdMOTYgNjUxTDgwIDY0NUw2NCA2MzdMNDggNjI5TDMyIDYxOUwxNiA2MDdMMCA1OTJaJy8+PC9zdmc+');
+  mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDk4Nyc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDBIMTI4MEwxMjc5IDk1MUwxMjYzIDk2M0wxMjQ3IDk2OEwxMjMxIDk2N0wxMjE1IDk1OUwxMTk5IDk0NUwxMTgzIDkyOEwxMTY3IDkxMUwxMTUxIDg5N0wxMTM1IDg4N0wxMTE5IDg4MUwxMTAzIDg3OUwxMDg3IDg3OUwxMDcxIDg4MEwxMDU1IDg4NEwxMDM5IDg4OEwxMDIzIDg5MkwxMDA3IDg5N0w5OTEgOTAyTDk3NSA5MDdMOTU5IDkxMUw5NDMgOTE1TDkyNyA5MThMOTExIDkyMUw4OTUgOTIyTDg3OSA5MjNMODYzIDkyM0w4NDcgOTIyTDgzMSA5MTlMODE1IDkxNkw3OTkgOTExTDc4MyA5MDRMNzY3IDg5N0w3NTEgODg4TDczNSA4NzhMNzE5IDg2OUw3MDMgODU5TDY4NyA4NTBMNjcxIDg0MEw2NTUgODMxTDY0MCA4MjJMNjI0IDgxMkw2MDggODAyTDU5MiA3OTFMNTc2IDc4M0w1NjAgNzc2TDU0NCA3NzBMNTI4IDc2NUw1MTIgNzYwTDQ5NiA3NTZMNDgwIDc1Mkw0NjQgNzQ5TDQ0OCA3NDZMNDMyIDc0NUw0MTYgNzQ0TDQwMCA3NDNMMzg0IDc0MkwzNjggNzQyTDM1MiA3NDFMMzM2IDc0MEwzMjAgNzM5TDMwNCA3MzdMMjg4IDczNUwyNzIgNzMyTDI1NiA3MjhMMjQwIDcyM0wyMjQgNzE2TDIwOCA3MDdMMTkyIDY5NkwxNzYgNjg1TDE2MCA2NzZMMTQ0IDY2OUwxMjggNjYyTDExMiA2NTdMOTYgNjUxTDgwIDY0NUw2NCA2MzdMNDggNjI5TDMyIDYxOUwxNiA2MDdMMCA1OTJaJy8+PC9zdmc+');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+/* The fixed copy guards both transparent edges while the inner copy moves. */
+.application-page .applicationBanner_parallaxMask::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('../image/application/banner.png') center / cover no-repeat;
+  pointer-events: none;
+}
+
+.application-page .applicationBanner .applicationBanner_bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: translate3d(0, var(--etinpo-parallax-y), 0) scale(1.16);
+  transform-origin: center bottom;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.application-page .applicationBanner .applicationBanner_clothes {
+  z-index: 2;
+}
+
+.application-page .applicationBanner .applicationBanner_text {
+  z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .application-page .applicationBanner_parallaxMask {
+    height: auto;
+    aspect-ratio: 1280 / 987;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .application-page .applicationBanner_parallaxMask::before {
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .application-page .applicationBanner .applicationBanner_bg {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .application-page .applicationBanner .applicationBanner_bg {
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* Keep the indented Product slogan row inside narrow viewports. */
+@media (max-width: 767.98px) {
+  .product-page .productSlogan .SloganText .slogan-02 {
+    width: calc(100% - 3rem);
+  }
+}
+
+/* Scheme A site-wide parallax: the artwork moves behind a fixed edge mask. */
+.etinpoParallaxMask,
+.etinpoParallaxWindow {
+  --etinpo-parallax-y: 0px;
+  --etinpo-parallax-scale: 1.22;
+  --etinpo-parallax-fit: cover;
+  --etinpo-parallax-position: center;
+  --etinpo-parallax-background-size: cover;
+  --etinpo-parallax-background-position: center;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+}
+
+.etinpoParallaxMask {
+  -webkit-mask-image: var(--etinpo-parallax-mask);
+  mask-image: var(--etinpo-parallax-mask);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--etinpo-parallax-mask-position, center);
+  mask-position: var(--etinpo-parallax-mask-position, center);
+  -webkit-mask-size: var(--etinpo-parallax-mask-size, 100% 100%);
+  mask-size: var(--etinpo-parallax-mask-size, 100% 100%);
+}
+
+.etinpoParallaxMask::before,
+.etinpoParallaxWindow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--etinpo-parallax-image);
+  background-repeat: no-repeat;
+  background-size: var(--etinpo-parallax-background-size);
+  background-position: var(--etinpo-parallax-background-position);
+  pointer-events: none;
+}
+
+.etinpoParallaxMask [data-parallax-layer],
+.etinpoParallaxWindow [data-parallax-layer] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1;
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  object-fit: var(--etinpo-parallax-fit) !important;
+  object-position: var(--etinpo-parallax-position) !important;
+  transform: translate3d(0, var(--etinpo-parallax-y), 0) scale(var(--etinpo-parallax-scale));
+  transform-origin: center bottom;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.product-page .productFooterParallaxMask {
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDkwOSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDkwOSBMMCAxNjMgTDE5IDE0MiBMMzEgMTA1IEwzOSA5NiBMNDYgOTMgTDYxIDkyIEwxMDEgOTggTDEyMSA5NyBMMTQxIDkzIEwxODYgNzcgTDIyMCA2OSBMMjQ2IDY2IEwyOTQgNjggTDMyOSA3NSBMMzU3IDg0IEwzOTAgOTkgTDQxNiAxMTQgTDQ1NyAxNDUgTDUxMiAxOTkgTDU1MSAyMjcgTDU4NyAyNDEgTDYwNyAyNDQgTDYyOCAyNDQgTDY1MSAyNDEgTDY3MyAyMzUgTDY4OSAyMjggTDcyOCAyMDUgTDc2MiAxOTMgTDgwMCAxODcgTDg4MiAxODQgTDkyMSAxNzUgTDk3MyAxNjggTDEwMTUgMTUwIEwxMTAxIDEwMSBMMTE4NyA0NyBMMTIxMyA0MCBMMTI3OSAzNSBMMTI3OSA5MDkgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/product/productFooter.png');
+  --etinpo-parallax-mask-size: cover;
+  --etinpo-parallax-background-size: cover;
+  --etinpo-parallax-scale: 1.34;
+  height: 60vw;
+}
+
+.clean-page {
+  overflow-x: clip;
+}
+
+.clean-page .cleanBanner_parallaxWindow {
+  --etinpo-parallax-image: url('../image/clean/banner.png');
+  --etinpo-parallax-scale: 1.2;
+  height: 300px;
+}
+
+.clean-page .cleanBanner_gray {
+  z-index: 2;
+}
+
+.technologies-page .techPic1ParallaxMask {
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDY1OSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA0NTQgTDEyNjUgNDU1IEwxMTgwIDQ3NyBMMTEyOCA0ODUgTDEwNzQgNDg2IEwxMDIwIDQ3NyBMMTAwNSA0ODUgTDk3MyA1MTcgTDk2MCA1MjMgTDkxNyA1MTUgTDg3MyA1MTUgTDgyOCA1MjMgTDc1NSA1NDIgTDcyMSA1NDcgTDY3NiA1NDUgTDYxNiA1MzUgTDU4NCA1MzUgTDU2NSA1NDAgTDU1MyA1NDYgTDUyMSA1NzIgTDQ5NiA1ODAgTDQ1OSA1ODEgTDQwNyA1NzYgTDMzOCA1NzYgTDI5MyA1ODAgTDI1MiA1ODcgTDIxMCA1OTggTDE3MCA2MTMgTDEzOCA2MjkgTDExNCA2MzYgTDg2IDY0MCBMMCA2NDYgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/technolgy/pic1.png');
+  --etinpo-parallax-scale: 1.28;
+  aspect-ratio: 1280 / 659;
+  margin-top: 57px;
+}
+
+.technologies-page .techPic2ParallaxMask {
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDc2Mic+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDc2MiBMMCAyMCBMMzIgMjEgTDExMCAzNCBMMTQwIDM1IEwxNTcgMjcgTDE4MSA0IEwxOTAgMCBMMTk5IDAgTDI0OCAyNSBMMjg4IDM3IEwzNzMgNTIgTDQzOSA1NCBMNDY5IDU4IEw0OTMgNjQgTDUyMSA3NiBMNTYzIDEwMCBMNjA3IDExMSBMNjU4IDEzNiBMNjc3IDEzNyBMNzU0IDEwNyBMNzcxIDk3IEw4MjMgNTYgTDg0OCA0MSBMODgwIDI2IEw5MDkgMTYgTDk0MSA5IEw5NzIgNiBMMTAwNCA3IEwxMDUyIDE2IEwxMTAwIDMzIEwxMTE5IDM3IEwxMTQ3IDM4IEwxMTc1IDMzIEwxMTk0IDMzIEwxMjAwIDM1IEwxMjExIDQ2IEwxMjIxIDc5IEwxMjI3IDg5IEwxMjQ5IDEwOSBMMTI3OSAxMjYgTDEyNzkgNzYyIFonLz48L3N2Zz4=');
+  --etinpo-parallax-image: url('../image/technolgy/pic2.png');
+  --etinpo-parallax-scale: 1.24;
+  aspect-ratio: 1280 / 762;
+}
+
+.partners-page {
+  overflow-x: clip;
+}
+
+.partners-page .partnersBannerParallaxMask {
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDYwNSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA2MDQgTDEyMzIgNTk0IEwxMTgwIDU3OCBMMTAzMCA1MTYgTDkwMiA0NzQgTDgzMSA0NTYgTDc1NyA0NDEgTDY4NSA0MzAgTDYxOSA0MjMgTDUzMCA0MTggTDQ0MyA0MTggTDMyMCA0MjYgTDI0NyA0MzUgTDE3NSA0NDcgTDkwIDQ2NSBMMCA0ODkgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/partners/banner.png');
+  --etinpo-parallax-mask-size: cover;
+  --etinpo-parallax-mask-position: left center;
+  --etinpo-parallax-background-size: cover;
+  --etinpo-parallax-background-position: left center;
+  --etinpo-parallax-position: left center;
+  --etinpo-parallax-scale: 1.16;
+  height: 88vw;
+}
+
+/* Keep the Chinese two-part title inside the 768–1199px banner canvas. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .application-page--zh .applicationBanner .applicationBanner_text {
+    left: 4rem;
+    right: 2rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .application-page--zh .applicationBanner .applicationBanner_text .application_text01 {
+    flex: 1 1 72%;
+    width: 72%;
+    min-width: 0;
+  }
+
+  .application-page--zh .applicationBanner .applicationBanner_text .application_text02 {
+    flex: 0 1 28%;
+    width: 28%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-page .productFooterParallaxMask {
+    --etinpo-parallax-mask-size: 100% 100%;
+    --etinpo-parallax-background-size: cover;
+    --etinpo-parallax-background-position: center top;
+    --etinpo-parallax-fit: cover;
+    --etinpo-parallax-position: center top;
+    --etinpo-parallax-scale: 1.22;
+    height: auto;
+    aspect-ratio: 1280 / 909;
+  }
+
+  .clean-page .cleanBanner_parallaxWindow {
+    --etinpo-parallax-scale: 1.22;
+    height: auto;
+    aspect-ratio: 1281 / 635;
+  }
+
+  .partners-page .partnersBannerParallaxMask {
+    --etinpo-parallax-mask-size: 100% 100%;
+    --etinpo-parallax-mask-position: center;
+    --etinpo-parallax-background-size: 100% 100%;
+    --etinpo-parallax-background-position: center;
+    --etinpo-parallax-fit: fill;
+    --etinpo-parallax-position: center;
+    --etinpo-parallax-scale: 1.22;
+    height: auto;
+    aspect-ratio: 1280 / 605;
+  }
+
+  .technologies-page .techPic1ParallaxMask {
+    --etinpo-parallax-scale: 1.22;
+  }
+
+  .technologies-page .techPic2ParallaxMask {
+    --etinpo-parallax-scale: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etinpoParallaxMask [data-parallax-layer],
+  .etinpoParallaxWindow [data-parallax-layer] {
+    transform: none;
+    will-change: auto;
+  }
+}

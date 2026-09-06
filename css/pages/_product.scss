@@ -1,0 +1,626 @@
+    .product {
+      background: #D5DEE1;
+      padding-top: 60px;
+      overflow: hidden;
+
+      .productTop {
+        background: url("../image/product/product-bn.png") top left no-repeat;
+        background-size: 150%;
+        min-height: 530px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include b768 {
+          background: url("../image/product/product-bn.png") top right no-repeat;
+          min-height: 640px;
+          background-size: contain;
+        }
+      }
+
+      .productTopText {
+        display: flex;
+        flex-direction: column;
+        padding-top: 17rem;
+
+        @include b768 {
+          padding-top: 0;
+        }
+
+        .productText01 {
+          padding: 0 1.5rem;
+
+          @include b768 {
+            padding: 0;
+          }
+        }
+
+        .productText02 {
+          padding: 0 1.5rem;
+
+          @include b768 {
+            padding: 0;
+          }
+        }
+
+
+        img {
+          margin-top: 2rem;
+          max-width: 100%;
+        }
+
+      }
+
+      .productSwiper {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+        max-width: 815px;
+        margin: auto;
+
+        .product-swiper {
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          align-items: center;
+          max-width: 200px;
+
+          h4 {
+            padding: 2rem 0 0 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #999;
+            text-align: center;
+
+            span {
+              display: block;
+              font-size: 0.8rem;
+            }
+          }
+
+        }
+
+        .swiper {
+          margin-top: 2rem;
+          padding-bottom: 2rem;
+          padding-top: 3rem;
+
+          @include b768 {}
+        }
+
+        .swiper-slide-active {
+          p {
+            background: linear-gradient(to right, rgba(0, 102, 51, 0) 0%, rgba(255, 197, 0, 0.5) 50%, rgba(0, 102, 51, 0) 100%);
+            padding: 1rem 2rem;
+
+          }
+        }
+
+        .swiper-button-prev {
+          padding-left: 1.5rem;
+        }
+
+        .swiper-button-next {
+          padding-right: 1.5rem;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+
+          color: #fff;
+        }
+      }
+
+      .productText {
+        p {
+          color: #595757;
+          font-size: 1rem;
+          text-align: justify;
+          padding: 2rem 3rem 0;
+
+          @include b768 {
+            padding: 2rem 1rem 0;
+            text-align: center;
+
+          }
+        }
+      }
+
+      .product2L3L {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 96%;
+        margin: auto;
+
+        @include b768 {
+          flex-direction: row;
+          align-items: flex-start;
+          max-width: 1200px;
+
+        }
+
+        .product2L {
+          width: 100%;
+
+          @include b768 {
+            width: 50%;
+          }
+
+          img {
+            padding-top: 3rem;
+            transform: translateX(-25%);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 130%;
+
+            @include b768 {
+              max-width: 100%;
+              transform: translateX(0);
+            }
+          }
+
+          p {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            padding: 2rem 2rem;
+            margin-top: 2rem;
+            color: #595757;
+            font-size: .9rem;
+          }
+
+        }
+
+        .product3L {
+          width: 100%;
+
+          @include b768 {
+            width: 50%;
+            padding-top: 10rem;
+          }
+
+          img {
+            max-width: 130%;
+            transform: translateX(-25%);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include b768 {
+              max-width: 100%;
+              transform: translateX(0);
+            }
+          }
+
+
+          p {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            padding: 2rem 2rem;
+            margin-top: 2rem;
+            color: #595757;
+            font-size: .9rem;
+          }
+        }
+      }
+
+      .productPP {
+        display: flex;
+          flex-direction: column;
+        align-items: center;
+        max-width: 960px;
+        margin: auto;
+        padding: 0 1rem 5rem;
+
+        @include b768 {
+        flex-direction: row;
+        }
+
+        p {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+          padding: 2rem 2rem;
+          margin-top: 2rem;
+          color: #595757;
+          font-size: .9rem;
+        }
+
+      }
+
+      .product_01 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .productPhoto {
+          position: relative;
+          max-width: 570px;
+
+          .productText {
+            position: absolute;
+            bottom: 5rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        p {
+          font-size: .8rem;
+          color: #595857;
+          font-weight: 600;
+
+        }
+
+        a {
+          display: flex;
+        }
+      }
+
+      .product_02 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 15rem;
+
+        .productPhoto {
+          position: relative;
+          max-width: 570px;
+
+          .productText {
+            position: absolute;
+            bottom: 5rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        p {
+          font-size: .8rem;
+          color: #595857;
+          font-weight: 600;
+
+        }
+      }
+
+      .product_03 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .productPhoto {
+          position: relative;
+          max-width: 570px;
+
+          .productText {
+            position: absolute;
+            bottom: 5rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        .gloves {
+          padding-left: 20rem;
+          margin-top: -4rem;
+          z-index: 9;
+        }
+
+        p {
+          font-size: .8rem;
+          color: #595857;
+          font-weight: 600;
+
+        }
+
+        a {
+          display: flex;
+        }
+      }
+
+      .product_04 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 15rem;
+
+        .productPhoto {
+          position: relative;
+          max-width: 570px;
+
+          .productText {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        p {
+          font-size: .8rem;
+          color: #595857;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .productSlogan {
+      background: #DFE8EA;
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+
+      @include b768 {
+        min-height: 545px;
+
+      }
+
+      .SloganText {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .slogan01 {
+          padding-top: 1rem;
+          padding-bottom: 3rem;
+          max-width: 90%;
+
+          @include b768 {
+            padding-top: 4rem;
+            padding-bottom: 5rem;
+
+          }
+        }
+
+        .slogan-02 {
+          display: flex;
+          justify-content: flex-start;
+          width: 100%;
+          margin-left: 3rem;
+
+          @include b768 {
+            display: block;
+            margin-left: 0;
+
+          }
+        }
+
+        .slogan02 {
+          padding-top: 2rem;
+          width: 70%;
+          filter: drop-shadow(1px 4px 3px rgb(0, 0, 0));
+
+          @include b768 {
+            padding-top: 14rem;
+            width: 100%;
+          }
+        }
+
+        .slogan03 {
+          padding-top: 1rem;
+          max-width: 90%;
+
+          @include b768 {
+            padding-top: 1rem;
+
+          }
+        }
+
+        .SloganText01 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          @include b768 {
+            display: flex;
+            flex-direction: row;
+
+          }
+
+        }
+      }
+
+      .sloganCloth {
+        position: absolute;
+        right: 0;
+        bottom: 3rem;
+        width: 100%;
+        z-index: 5;
+        height: 63vw;
+        object-fit: cover;
+        object-position: right;
+
+        @include b768 {
+          bottom: -5rem;
+          object-fit: contain;
+          object-position: top;
+          height: auto;
+        }
+      }
+
+      .sloganPeople {
+        position: absolute;
+        right: 5rem;
+        bottom: 10rem;
+        z-index: 5;
+        width: 50px;
+
+        @include b768 {
+          width: auto;
+        }
+      }
+    }
+
+    .functionText {
+      background: #D5DEE1;
+
+      position: relative;
+
+
+
+      p {
+        color: #595757;
+        font-size: 1rem;
+        text-align: justify;
+        padding: 3rem;
+        line-height: 1.5rem;
+        margin-bottom: 0;
+
+        @include b768 {
+          font-size: 1rem;
+          padding: 3rem 0 3rem;
+          text-align: center;
+        }
+      }
+    }
+
+    .function {
+      background: #D5DEE1;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 0rem;
+
+      @include b768 {
+        padding-bottom: 5rem;
+      }
+
+      .functionGroup {
+
+        .functionSwiper {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+          max-width: 815px;
+          margin: auto;
+          padding-top: 3rem;
+
+          @include b768 {
+            padding-top: 0;
+          }
+
+          .function-swiper {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            max-width: 200px;
+
+            h4 {
+              padding: 2rem 0 0 0;
+              font-size: 1.5rem;
+              font-weight: 300;
+              color: $green;
+              text-align: center;
+            }
+
+
+            p {
+              font-size: 1rem;
+              color: #999;
+              text-align: center;
+
+              @include b768 {
+                font-size: 1rem;
+              }
+            }
+
+          }
+
+          .swiper {
+            padding-bottom: 2rem;
+          }
+
+          .swiper-button-prev {
+            padding-left: 3rem;
+
+            @include b768 {
+
+              padding-left: 0;
+            }
+          }
+
+          .swiper-button-next {
+            padding-right: 3rem;
+
+            @include b768 {
+              padding-right: 0;
+            }
+          }
+
+          .swiper-button-prev,
+          .swiper-button-next {
+            color: #fff;
+
+          }
+        }
+
+        .slogan04 {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 70px;
+          justify-content: center;
+
+          img {
+            max-width: 70%;
+            filter: drop-shadow(1px 4px 5px rgb(0, 0, 0));
+
+            @include b768 {
+              max-width: 90%;
+            }
+          }
+
+          p {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            color: #004632;
+            padding: 1rem 3rem;
+            margin: 2rem 0;
+            line-height: 1.8rem;
+            text-align: justify;
+            font-size: 1rem;
+
+            @include b768 {
+              padding: 2rem 5rem;
+              font-size: 1rem;
+              text-align: center;
+            }
+
+            br {
+              display: contents;
+
+              @include b768 {
+
+                display: inline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .productFooter {
+      background: #D5DEE1;
+      padding-bottom: 26rem;
+
+      @include b768 {
+        padding-bottom: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 60vw;
+        object-fit: cover;
+        object-position: center;
+
+        @include b768 {
+          object-fit: contain;
+          object-position: top;
+          height: auto;
+        }
+      }
+    }

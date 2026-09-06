@@ -1,0 +1,215 @@
+/* Visible floating motion while preserving each cloth's positioning transform. */
+@keyframes cloth4-float-mobile {
+    0%, 50%, 100% { transform: translateY(0) scale(2.5); }
+    25% { transform: translateY(-22px) scale(2.5); }
+    75% { transform: translateY(22px) scale(2.5); }
+}
+
+@keyframes cloth4-float-desktop {
+    0%, 50%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-22px) scale(1); }
+    75% { transform: translateY(22px) scale(1); }
+}
+
+@keyframes cloth5-float-mobile {
+    0%, 50%, 100% { transform: translateX(-65%) translateY(0) scale(1.5); }
+    25% { transform: translateX(-65%) translateY(-22px) scale(1.5); }
+    75% { transform: translateX(-65%) translateY(22px) scale(1.5); }
+}
+
+@keyframes cloth5-float-desktop {
+    0%, 50%, 100% { transform: translateX(0) translateY(0) scale(1); }
+    25% { transform: translateX(0) translateY(-22px) scale(1); }
+    75% { transform: translateX(0) translateY(22px) scale(1); }
+}
+
+.about-cloth-float {
+    animation-duration: 10000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+.AboutBn02.about-cloth-float {
+    animation-name: cloth4-float-mobile;
+    animation-delay: -1s;
+}
+
+.eco .colth5.about-cloth-float {
+    animation-name: cloth5-float-mobile;
+    animation-delay: -6s;
+}
+
+@media (min-width: 768px) {
+    .AboutBn02.about-cloth-float {
+        animation-name: cloth4-float-desktop;
+    }
+
+    .eco .colth5.about-cloth-float {
+        animation-name: cloth5-float-desktop;
+    }
+}
+
+/* text-3/text-6: div containers avoid the clipping caused by <object>. */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.split-word {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 900ms ease, transform 900ms ease;
+    pointer-events: none;
+}
+
+.split-word-support {
+    --word-cycle: 8s;
+}
+
+.split-word-ecological {
+    --word-cycle: 10s;
+}
+
+.split-word.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.split-word svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.split-word .word-letter {
+    fill: #00643c !important;
+    opacity: 0;
+    transform: translateY(var(--letter-y));
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: var(--word-cycle);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}
+
+.split-word .word-float {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: var(--word-cycle);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.split-word-support .word-letter {
+    animation-name: support-letter-cycle;
+}
+
+.split-word-support .word-float {
+    animation-name: support-row-cycle;
+}
+
+.split-word-ecological .word-letter {
+    animation-name: ecological-letter-cycle;
+}
+
+.split-word-ecological .word-float {
+    animation-name: ecological-row-cycle;
+}
+
+.split-word.is-animated .word-letter,
+.split-word.is-animated .word-float {
+    animation-play-state: running;
+}
+
+@keyframes support-letter-cycle {
+    0% { opacity: 0; transform: translateY(var(--letter-y)); }
+    8% { opacity: .55; }
+    25%, 78% { opacity: 1; transform: translateY(0); }
+    92% { opacity: .55; }
+    100% { opacity: 0; transform: translateY(var(--letter-y)); }
+}
+
+@keyframes support-row-cycle {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-8px); }
+    50% { transform: translateY(6px); }
+    75% { transform: translateY(-5px); }
+}
+
+@keyframes ecological-letter-cycle {
+    0% { opacity: 0; transform: translateY(var(--letter-y)); }
+    7% { opacity: .55; }
+    20%, 80% { opacity: 1; transform: translateY(0); }
+    93% { opacity: .55; }
+    100% { opacity: 0; transform: translateY(var(--letter-y)); }
+}
+
+@keyframes ecological-row-cycle {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(8px); }
+    75% { transform: translateY(-6px); }
+}
+
+.principles .principlesitem .itemPhoto .split-word {
+    width: 100%;
+    max-width: 100%;
+}
+
+.principles .principlesitem,
+.principles .principlesitem .itemPhoto {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.principles .principlesitem .itemPhoto {
+    width: 100%;
+}
+
+/* Phone layout: both SVG rows must stay inside their own content column. */
+@media (max-width: 767.98px) {
+    .split-word-support,
+    .split-word-ecological,
+    .principles .principlesitem .itemPhoto .split-word-ecological {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Desktop layout: restore the artwork's intended native display sizes. */
+@media (min-width: 768px) {
+    .split-word-support {
+        width: 465px;
+        max-width: 465px;
+    }
+
+    .split-word-ecological {
+        width: 665px;
+        max-width: 665px;
+    }
+
+    .principles .principlesitem .itemPhoto {
+        flex: 0 0 50%;
+        width: 50%;
+        min-width: 0;
+        max-width: 50%;
+    }
+
+    .principles .principlesitem .itemPhoto .split-word-ecological {
+        width: 665px;
+        max-width: 100%;
+    }
+}

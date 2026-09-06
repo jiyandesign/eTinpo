@@ -1,0 +1,241 @@
+.YearinReview {
+    position: relative;
+    
+            h3{
+                padding-top: 2rem;
+                font-size: 1.5rem;
+                color: $green;
+            }
+
+    .year01 {
+        background: url('../image/develop/cloth.png') no-repeat top right,
+            linear-gradient(180deg, #D5DEE1, #B3BBC0,#CFE9ED);
+        background-position-y: 3rem;
+        padding-top: 12rem;
+        text-align: center;
+
+        @include b768 {
+            padding-top: 15rem;
+            background-position-y: top;
+        }
+        .year{
+            
+        &:nth-child(odd) {
+            justify-content: flex-end;
+        }
+
+        &:nth-child(even) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+
+            @include b768 {
+                flex-direction: row;
+            }
+
+        }
+        }
+
+        .yeareTinpoLogo {
+            width: 280px;
+
+            @include b768 {
+                width: auto;
+            }
+        }
+
+        .yearIntroduction {
+
+            max-width: 815px;
+            margin: 8rem auto 5rem;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%);
+
+            @include b768 {
+                margin: 2rem auto 5rem;
+            }
+
+            p {
+                padding: 1rem 3rem;
+                margin-bottom: 0;
+                color: #595757;
+                text-align: justify;
+                font-size: 1rem;
+
+                @include b768 {
+                    padding: 1rem;
+                    text-align: center;
+
+                }
+            }
+
+        }
+    }
+
+
+    .year {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 5rem;
+        max-width: 700px;
+        margin: auto;
+        z-index: 10;
+        position: relative;
+        padding: 0 3rem 5rem;
+        flex-direction: column;
+
+
+        @include b768 {
+            padding: 0;
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .yearimg {
+            border-radius: 50%;
+            width: 50%;
+
+            @include b768 {
+                width: auto;
+                position: relative;
+                z-index: 10;
+            }
+        }
+
+        h5 {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            font-size: 2rem;
+            color: $green;
+            letter-spacing: 3px;
+            margin: 0;
+            padding-top: 0.5rem;
+
+            @include b768 {
+                font-size: 2.5rem;
+                padding-top: 0;
+            }
+        }
+
+        p {
+            padding-top: 0;
+            color: $green;
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            @include b768 {
+                width: 180px;
+                font-size: 1rem;
+
+            }
+
+        }
+    }
+
+    .year02 {
+        background: linear-gradient(180deg, #CFE9ED, #7EA5A9);
+        padding: 5rem 1rem 0;
+
+        h5 {
+            color: #fff;
+        }
+
+        p {
+            color: #fff;
+        }
+        
+        .year{
+            
+        &:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        &:nth-child(even) {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            @include b768 {
+                flex-direction: row;
+            }
+
+        }
+        }
+    }
+
+    .year03 {
+        background: linear-gradient(180deg, #7EA5A9, #004632, #001A12);
+        padding: 5rem 1rem 35rem;
+
+        @include b768 {
+            padding: 5rem 1rem 35rem;
+        }
+
+        h5 {
+            color: #fff;
+        }
+
+        p {
+            color: #fff;
+        }
+        
+        .year{
+            
+        &:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        &:nth-child(even) {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            @include b768 {
+                flex-direction: row;
+            }
+
+        }
+        }
+    }
+
+    .arrow-left,
+    .arrow-right {
+        margin: 0 1rem;
+        display: none;
+
+        @include b768 {
+            margin: 0 2rem;
+            display: block;
+        }
+    }
+
+    .arrow-left {
+        transform: rotate(180deg);
+    }
+
+    .circle1 {
+        position: absolute;
+        top: 45rem;
+        right: 0;
+        z-index: 9;
+        width: 250px;
+        display: none;
+
+        @include b768 {
+            display: block;
+        }
+    }
+
+    .circle2 {
+        position: absolute;
+        bottom: 34rem;
+        left: 0;
+        z-index: 9;
+        max-width: 450px;
+        min-width: 350px;
+
+        @include b768 {
+            width: 450px;
+            bottom: 45rem;
+
+        }
+    }
+}
