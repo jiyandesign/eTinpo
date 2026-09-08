@@ -3204,7 +3204,7 @@ a:hover {
 }
 
 .technologyFeature {
-  background: linear-gradient(180deg, #001A12 0%, #D5DEE1 8%, #D5DEE1 72%, #004632 96%, #004632 100%);
+  background: linear-gradient(180deg, #001A12 0%, #D5DEE1 12%, #D5DEE1 90%, #8caaa5 97%, #8caaa5 100%);
   background-color: #004632;
   position: relative;
 }
@@ -3566,7 +3566,7 @@ a:hover {
 }
 
 .homeproduct {
-  background: linear-gradient(180deg, #004632 0%, #004632 5%, #D5DEE1 10%, #D5DEE1 100%);
+  background: linear-gradient(180deg, #8caaa5 0%, #004632 10%, #D5DEE1 20%, #D5DEE1 100%);
   padding: 0 3rem 30rem;
   position: relative;
 }
