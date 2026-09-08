@@ -18,17 +18,13 @@
   position: relative;
   min-width: 100%;
   height: 88vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: left;
-     object-position: left;
+  object-fit: cover;
+  object-position: left;
 }
 @media (min-width: 768px) {
   .partners .partnersPhoto .partnersBanner {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
   }
 }
@@ -353,16 +349,25 @@
   }
 }
 
+/* The English page has no Chinese eyebrow heading above OUR CORE VALUES.
+   Restore that reserved mobile space and keep the title above the wave art. */
+@media (max-width: 767.98px) {
+  .responsibility-page--en .values {
+    padding-top: 3rem;
+  }
+  .responsibility-page--en .values > h4 {
+    position: relative;
+    z-index: 2;
+  }
+}
 .clean .cleanBanner {
   position: relative;
 }
 .clean .cleanBanner .cleanBanner_bg {
   width: 100%;
   height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .clean .cleanBanner .cleanBanner_bg {
@@ -529,8 +534,7 @@
   width: 65px;
   height: 65px;
   max-width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   padding: 0;
 }
 .clean-page--zh .clean .garment .cleanIcon ul li .cleanIcon_text,
@@ -542,8 +546,7 @@
 @media (min-width: 768px) {
   .clean-page--zh .clean .garment .cleanIcon ul,
   .clean-page--en .clean .garment .cleanIcon ul {
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
     row-gap: 2rem;
   }
   .clean-page--zh .clean .garment .cleanIcon ul li,
@@ -568,8 +571,7 @@
 @media (max-width: 767.98px) {
   .clean-page--zh .clean .garment .cleanIcon ul,
   .clean-page--en .clean .garment .cleanIcon ul {
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-gap: 10px;
     row-gap: 1rem;
   }
   .clean-page--zh .clean .garment .cleanIcon ul li,
@@ -577,8 +579,7 @@
     display: grid;
     grid-template-columns: 65px minmax(0, 1fr);
     grid-auto-flow: initial;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-gap: 10px;
     align-items: center;
     justify-content: stretch;
     justify-items: start;
@@ -592,6 +593,7 @@
     text-align: left;
   }
 }
+
 .clean-page--zh .clean .garment .cleanIcon ul {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -617,8 +619,7 @@
   .clean-page--en .clean .garment .cleanIcon ul.en {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -844,6 +845,22 @@
   }
 }
 
+/* pic7 and pic9 are linked, unlike the other timeline images.  On mobile the
+   percentage width must belong to the link wrapper once, not be applied a
+   second time to the image inside it. */
+@media (max-width: 767.98px) {
+  .YearinReview .year > a {
+    display: block;
+    width: 50%;
+    max-width: 50%;
+  }
+  .YearinReview .year > a > .yearimg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
 .contact {
   background: linear-gradient(180deg, #D5DEE1 0%, #A7AFB4 100%);
   color: #004632;
@@ -1117,17 +1134,13 @@
 .application .applicationBanner .applicationBanner_bg {
   position: relative;
   height: 95vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .application .applicationBanner .applicationBanner_bg {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
   }
 }
@@ -1300,19 +1313,15 @@
 .bannerTechs img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   padding-top: 0;
 }
 @media (min-width: 768px) {
   .bannerTechs img {
     width: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     padding-top: 60px;
   }
 }
@@ -1405,17 +1414,16 @@
   }
 }
 .features .featuresTitle {
-  background: url("../image/technolgy/fearures.svg") top right no-repeat;
-  background-size: 100%;
+  background: #C8D0D4 url("../image/technolgy/fearures.svg") bottom/100% no-repeat;
   height: 200px;
   margin-top: -1px;
   text-align: center;
 }
 @media (min-width: 768px) {
   .features .featuresTitle {
-    background: url("../image/technolgy/fearures.svg") bottom right no-repeat;
+    background-position: bottom;
     background-size: 100%;
-    height: 300px;
+    height: max(300px, 23.4375vw);
     text-align: left;
   }
 }
@@ -1518,19 +1526,15 @@
   width: 100%;
   height: auto;
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: top;
-     object-position: top;
+  object-fit: contain;
+  object-position: top;
 }
 @media (min-width: 768px) {
   .technologiesFooter img {
     width: 100%;
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
   }
 }
 
@@ -1634,7 +1638,11 @@
   position: relative;
   overflow-x: clip;
 }
-
+@media (min-width: 768px) {
+  .newtechnology {
+    background: linear-gradient(90deg, #001A12 7%, #D5DEE1 7%, #D5DEE1 100%);
+  }
+}
 .newtechnology .new-technology {
   align-items: center;
   padding: 0 1.5rem;
@@ -1734,19 +1742,15 @@
   position: relative;
   z-index: 2;
   height: 15vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .eco .ecoTop {
     margin-top: -125px;
     width: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
   }
 }
 .eco .ecoText {
@@ -1874,17 +1878,13 @@
   width: 100%;
   margin-top: -25rem;
   height: 125vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
+  object-fit: cover;
+  object-position: right;
 }
 @media (min-width: 768px) {
   .principles .colth3 {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
     margin-top: -25rem;
   }
@@ -2268,18 +2268,14 @@
   width: 100%;
   z-index: 5;
   height: 63vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
+  object-fit: cover;
+  object-position: right;
 }
 @media (min-width: 768px) {
   .productSlogan .sloganCloth {
     bottom: -5rem;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
   }
 }
@@ -2439,17 +2435,13 @@
 .productFooter img {
   width: 100%;
   height: 60vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .productFooter img {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
   }
 }
@@ -2541,19 +2533,15 @@
   position: relative;
   z-index: 1;
   height: 15rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   transform: translate(0, 28%) scale(1.5);
 }
 @media (min-width: 768px) {
   .rd .rd_bn .cloth-w {
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
   }
 }
 .rd .circle {
@@ -2624,7 +2612,6 @@
   justify-content: center;
   padding: 2rem 1.5rem 1rem;
   background: #FFF;
-  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   max-height: 100%;
@@ -3086,7 +3073,7 @@ a:hover {
   display: inherit;
   transform-origin: center center;
   animation-name: shake-vertical;
-  animation-duration: 50000ms;
+  animation-duration: 40000ms;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -3103,17 +3090,13 @@ a:hover {
   top: 2rem;
   z-index: 4;
   height: 135vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .banner .eTINPO-bn-w {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
     width: 100%;
     top: 3rem;
@@ -3123,19 +3106,15 @@ a:hover {
   position: absolute;
   max-width: 100%;
   top: 10%;
-  z-index: 1;
+  z-index: 3;
   height: 135vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .banner .eTINPO-bn-g {
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     height: auto;
     width: 100%;
   }
@@ -3225,7 +3204,7 @@ a:hover {
 }
 
 .technologyFeature {
-  background: linear-gradient(180deg, #001A12 0%, #D5DEE1 10%, #D5DEE1 90%, #7ea09a 98%, #7ea09a 100%);
+  background: linear-gradient(180deg, #001A12 0%, #D5DEE1 8%, #D5DEE1 72%, #004632 96%, #004632 100%);
   background-color: #004632;
   position: relative;
 }
@@ -3262,9 +3241,6 @@ a:hover {
 .feature .featureTheme:nth-child(even) {
   margin-top: 2.75rem;
 }
-.feature .row:first-child .featureTheme:first-child {
-  margin-top: 0;
-}
 @media (min-width: 768px) {
   .feature .featureTheme:nth-child(even) {
     margin-top: 10rem;
@@ -3284,6 +3260,9 @@ a:hover {
     font-size: 2rem;
     padding-bottom: 1rem;
   }
+}
+.feature .row:first-child .featureTheme:first-child {
+  margin-top: 0;
 }
 .feature .featurePhoto img {
   width: 90px;
@@ -3340,10 +3319,8 @@ a:hover {
   right: 0;
   bottom: -6rem;
   z-index: 2;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 20rem;
 }
 @media (min-width: 768px) {
@@ -3353,10 +3330,8 @@ a:hover {
     transform: scale(1);
     right: 0;
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
   }
 }
 .featureCloth .photo_02 {
@@ -3367,19 +3342,15 @@ a:hover {
   bottom: 0;
   z-index: 1;
   height: 35vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
+  object-fit: cover;
+  object-position: right;
 }
 @media (min-width: 768px) {
   .featureCloth .photo_02 {
     bottom: 0;
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
   }
 }
 
@@ -3479,10 +3450,8 @@ a:hover {
   right: 0;
   top: -10rem;
   z-index: 2;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   display: none;
 }
 @media (min-width: 768px) {
@@ -3492,10 +3461,8 @@ a:hover {
     right: 0;
     top: -15rem;
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: top;
-       object-position: top;
+    object-fit: contain;
+    object-position: top;
     z-index: 1;
   }
 }
@@ -3602,21 +3569,6 @@ a:hover {
   background: linear-gradient(180deg, #004632 0%, #004632 5%, #D5DEE1 10%, #D5DEE1 100%);
   padding: 0 3rem 30rem;
   position: relative;
-}
-
-/* 僅調整 440px 以下手機 */
-@media (max-width: 440px) {
-  .homeproduct {
-    background: linear-gradient(
-      180deg,
-      #7ea09a 0%,
-      #7ea09a 2%,
-      #004632 5%,
-      #004632 10%,
-      #D5DEE1 25%,
-      #D5DEE1 100%
-    );
-  }
 }
 @media (min-width: 768px) {
   .homeproduct {
@@ -4225,14 +4177,10 @@ a:hover {
   height: 24px;
   background-color: #FACD00;
   /* 定義圖標的顏色 */
-  -webkit-mask-image: url("../image/more-arrow.svg");
-          mask-image: url("../image/more-arrow.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
+  mask-image: url("../image/more-arrow.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 footer {
@@ -4343,7 +4291,7 @@ footer .eTinpoLogo {
 }
 footer .eTinpoLogo img {
   max-width: 220px;
-}/*# sourceMappingURL=style.css.map */
+}
 
 /* 2026-09 eTINPO revision fixes */
 .navbar-nav .nav-link,
@@ -4351,15 +4299,16 @@ footer .eTinpoLogo img {
 .footer .footerBtn a {
   white-space: nowrap !important;
 }
+
 .bannerTechs .bannerText .b-left-en {
   max-width: 560px;
 }
+
 @media (max-width: 991.98px) {
   .navbar-nav .dropdown-menu {
     position: static;
   }
 }
-
 /* 2026-09 staged motion system: decorative float + looping split type */
 @keyframes etinpo-float-orbit {
   0%, 100% {
@@ -4375,7 +4324,6 @@ footer .eTinpoLogo img {
     translate: var(--etinpo-float-x-c, 0) var(--etinpo-float-y-c, 3px);
   }
 }
-
 .etinpo-float {
   animation: etinpo-float-orbit var(--etinpo-float-duration, 8s) ease-in-out var(--etinpo-float-delay, 0s) infinite;
   will-change: translate;
@@ -4457,7 +4405,6 @@ footer .eTinpoLogo img {
   --etinpo-float-delay: -2.9s;
 }
 
-/* product-bn.png remains a responsive background, but floats on its own layer. */
 .product .productTop {
   position: relative;
   overflow: hidden;
@@ -4471,7 +4418,7 @@ footer .eTinpoLogo img {
   z-index: 0;
   inset: -30px;
   pointer-events: none;
-  background: url("../image/product/product-bn.png") top left / 150% auto no-repeat;
+  background: url("../image/product/product-bn.png") top left/150% auto no-repeat;
   animation: etinpo-product-background-float 8.8s ease-in-out -2.1s infinite;
   will-change: transform;
 }
@@ -4495,15 +4442,12 @@ footer .eTinpoLogo img {
     transform: translate3d(0, -12px, 0);
   }
 }
-
 @media (min-width: 768px) {
   .product .productTop::before {
     background-position: top right;
     background-size: contain;
   }
 }
-
-/* Keep the English Technologies title inside the desktop and mobile canvas. */
 .bannerTechs--en .bannerText .b-left-en {
   align-self: center;
   width: 100%;
@@ -4532,8 +4476,7 @@ footer .eTinpoLogo img {
   width: 25px;
   max-width: 25px;
   height: 34px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin: 0;
 }
 
@@ -4546,24 +4489,19 @@ footer .eTinpoLogo img {
   .application .application-item--apparel .techItemText p {
     width: 500px;
   }
-
   .application .application-item--footwear .techItemText p {
     width: 600px;
   }
-
   .application .application-item--gloves .techItemText p {
     width: 400px;
   }
-
   .application .application-item--medical .techItemText p {
     width: 550px;
   }
-
   .application .application-item .techItemText p {
     max-width: 100%;
   }
 }
-
 @media (max-width: 767.98px) {
   .float-index-technology,
   .float-application-clothes {
@@ -4572,14 +4510,12 @@ footer .eTinpoLogo img {
     --etinpo-float-x-c: -1px;
   }
 }
-
 @media (min-width: 768px) {
   .bannerTechs--en .bannerText .b-left-en {
     flex: 0 1 42%;
     width: 42%;
     max-width: 560px;
   }
-
   .bannerTechs--en .bannerText .b-right {
     flex: 0 1 52%;
     width: 52%;
@@ -4588,8 +4524,6 @@ footer .eTinpoLogo img {
     margin-left: 2%;
   }
 }
-
-/* English Partners: make the three copy blocks flow in sequence instead of overlap. */
 .partners--en .partnersTheme {
   display: flex;
   flex-direction: column;
@@ -4631,26 +4565,21 @@ footer .eTinpoLogo img {
 
 @media (min-width: 768px) {
   .partners--en .partnersTheme {
-    width: min(980px, calc(100% - 3rem));
+    width: min(980px, 100% - 3rem);
     align-items: stretch;
   }
-
   .partners--en .partnersTheme .partners_slogan {
     padding: 0 2rem;
   }
-
   .partners--en .partnersTheme .title {
     align-items: flex-start;
     padding-top: 2.75rem;
   }
-
   .partners--en .partnersTheme .title > p {
     width: 100%;
     margin: 2.25rem 0 0;
   }
 }
-
-/* Prevent the long 2017 English milestone from creating a 2px mobile overflow. */
 .YearinReview .year p.year-copy-wide {
   width: 100%;
   max-width: 25rem;
@@ -4658,24 +4587,35 @@ footer .eTinpoLogo img {
 
 /* Final responsive polish: keep these rules page-scoped to avoid cross-page regressions. */
 @keyframes product-cloth-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  25% { transform: translate3d(0, -8px, 0); }
-  50% { transform: translate3d(0, 0, 0); }
-  75% { transform: translate3d(0, 8px, 0); }
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, -8px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, 8px, 0);
+  }
 }
 .productSlogan .sloganCloth.product-cloth-float {
-  animation: product-cloth-float 10s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: product-cloth-float 14s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
+
 .about-page .bannerAbout .bannerText .bannerText01 {
-  filter: drop-shadow(0 2px 2.5px rgba(0, 0, 0, 1.5));
+  filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, 0.62));
 }
+
 .YearinReview .year02,
 .YearinReview .year03 {
   position: relative;
   margin-top: -2px;
 }
+
 footer > svg {
   display: block;
   position: relative;
@@ -4684,10 +4624,12 @@ footer > svg {
   margin-bottom: -2px;
   transform: translateY(1px);
 }
+
 footer .footer {
   position: relative;
   margin-top: -1px;
 }
+
 @media (min-width: 768px) {
   .about-page--zh .principles .split-word-ecological {
     margin-top: 5.5rem;
@@ -4726,19 +4668,16 @@ footer .footer {
     margin-top: calc(-22.14vw - 1px);
   }
 }
-
 /* The animated banner SVGs intentionally extend beyond their own viewBox at
    tablet widths. Contain that artwork without changing its composition. */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .technologies-page {
     overflow-x: hidden;
   }
-
   .technologies-page .bannerTechs {
     overflow: hidden;
   }
 }
-
 /* adventures.svg needs vertical room for its split/float animation. The
    negative margins cancel only the new transparent canvas, so the visible
    title stays in the exact same layout position at every width. */
@@ -4755,7 +4694,7 @@ footer .footer {
 /* Keep the Chinese partners composition inside tablet viewports. */
 @media (min-width: 768px) {
   .partners:not(.partners--en) .partnersTheme {
-    width: min(980px, calc(100% - 3rem));
+    width: min(980px, 100% - 3rem);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4763,13 +4702,11 @@ footer .footer {
     animation: none;
   }
 }
-
 @media (min-width: 768px) {
   .YearinReview .year p.year-copy-wide {
     width: 25rem;
   }
 }
-
 /* Product cloth composition: restore the original rising arc between the
    landscape and its supporting copy without changing the supplied artwork. */
 .product-page {
@@ -4815,7 +4752,7 @@ footer .footer {
   top: -40px;
   width: 100%;
   height: 42px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  border-radius: 50% 50% 0 0/100% 100% 0 0;
   background: #D5DEE1;
   box-shadow: 0 0 0 2px #D5DEE1;
   pointer-events: none;
@@ -4832,24 +4769,20 @@ footer .footer {
     top: calc(100% + 0rem - 52.96875vw);
     width: 100%;
   }
-
   /* The English first row hides slogan02, making the shared slogan03 sit
      132px higher than the Chinese layout. Restore the same white-cloth
      landing position without changing either mobile layout. */
   .product-page--en .productSlogan .slogan03 {
     margin-top: 8.25rem;
   }
-
   .product-page .functionText::before {
     top: max(-130px, -8.5vw);
     height: min(130px, 8.5vw);
   }
-
   .product-page .functionText p {
     transform: translateY(max(-125px, -7.5vw));
   }
 }
-
 .banner .banner02-lines {
   display: block;
   width: 244px;
@@ -4870,7 +4803,11 @@ footer .footer {
 .application-page .applicationBanner_parallaxMask {
   position: relative;
   z-index: 0;
-  width: 100%;
+  /* Anchor the artwork to the viewport even if a Bootstrap/container wrapper
+     is introduced later.  This mirrors the full-bleed Product footer. */
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
   height: 95vw;
   overflow: hidden;
   -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDk4Nyc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDBIMTI4MEwxMjc5IDk1MUwxMjYzIDk2M0wxMjQ3IDk2OEwxMjMxIDk2N0wxMjE1IDk1OUwxMTk5IDk0NUwxMTgzIDkyOEwxMTY3IDkxMUwxMTUxIDg5N0wxMTM1IDg4N0wxMTE5IDg4MUwxMTAzIDg3OUwxMDg3IDg3OUwxMDcxIDg4MEwxMDU1IDg4NEwxMDM5IDg4OEwxMDIzIDg5MkwxMDA3IDg5N0w5OTEgOTAyTDk3NSA5MDdMOTU5IDkxMUw5NDMgOTE1TDkyNyA5MThMOTExIDkyMUw4OTUgOTIyTDg3OSA5MjNMODYzIDkyM0w4NDcgOTIyTDgzMSA5MTlMODE1IDkxNkw3OTkgOTExTDc4MyA5MDRMNzY3IDg5N0w3NTEgODg4TDczNSA4NzhMNzE5IDg2OUw3MDMgODU5TDY4NyA4NTBMNjcxIDg0MEw2NTUgODMxTDY0MCA4MjJMNjI0IDgxMkw2MDggODAyTDU5MiA3OTFMNTc2IDc4M0w1NjAgNzc2TDU0NCA3NzBMNTI4IDc2NUw1MTIgNzYwTDQ5NiA3NTZMNDgwIDc1Mkw0NjQgNzQ5TDQ0OCA3NDZMNDMyIDc0NUw0MTYgNzQ0TDQwMCA3NDNMMzg0IDc0MkwzNjggNzQyTDM1MiA3NDFMMzM2IDc0MEwzMjAgNzM5TDMwNCA3MzdMMjg4IDczNUwyNzIgNzMyTDI1NiA3MjhMMjQwIDcyM0wyMjQgNzE2TDIwOCA3MDdMMTkyIDY5NkwxNzYgNjg1TDE2MCA2NzZMMTQ0IDY2OUwxMjggNjYyTDExMiA2NTdMOTYgNjUxTDgwIDY0NUw2NCA2MzdMNDggNjI5TDMyIDYxOUwxNiA2MDdMMCA1OTJaJy8+PC9zdmc+");
@@ -4889,7 +4826,7 @@ footer .footer {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("../image/application/banner.png") center / cover no-repeat;
+  background: url("../image/application/banner.jpg") center/cover no-repeat;
   pointer-events: none;
 }
 
@@ -4919,36 +4856,31 @@ footer .footer {
 @media (min-width: 768px) {
   .application-page .applicationBanner_parallaxMask {
     height: auto;
-    aspect-ratio: 1280 / 987;
+    aspect-ratio: 1280/987;
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-
   .application-page .applicationBanner_parallaxMask::before {
     background-size: cover;
     background-position: center top;
   }
-
   .application-page .applicationBanner .applicationBanner_bg {
     object-fit: cover;
     object-position: center top;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .application-page .applicationBanner .applicationBanner_bg {
     transform: none;
     will-change: auto;
   }
 }
-
 /* Keep the indented Product slogan row inside narrow viewports. */
 @media (max-width: 767.98px) {
   .product-page .productSlogan .SloganText .slogan-02 {
     width: calc(100% - 3rem);
   }
 }
-
 /* Scheme A site-wide parallax: the artwork moves behind a fixed edge mask. */
 .etinpoParallaxMask,
 .etinpoParallaxWindow {
@@ -5007,8 +4939,8 @@ footer .footer {
 }
 
 .product-page .productFooterParallaxMask {
-  --etinpo-parallax-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDkwOSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDkwOSBMMCAxNjMgTDE5IDE0MiBMMzEgMTA1IEwzOSA5NiBMNDYgOTMgTDYxIDkyIEwxMDEgOTggTDEyMSA5NyBMMTQxIDkzIEwxODYgNzcgTDIyMCA2OSBMMjQ2IDY2IEwyOTQgNjggTDMyOSA3NSBMMzU3IDg0IEwzOTAgOTkgTDQxNiAxMTQgTDQ1NyAxNDUgTDUxMiAxOTkgTDU1MSAyMjcgTDU4NyAyNDEgTDYwNyAyNDQgTDYyOCAyNDQgTDY1MSAyNDEgTDY3MyAyMzUgTDY4OSAyMjggTDcyOCAyMDUgTDc2MiAxOTMgTDgwMCAxODcgTDg4MiAxODQgTDkyMSAxNzUgTDk3MyAxNjggTDEwMTUgMTUwIEwxMTAxIDEwMSBMMTE4NyA0NyBMMTIxMyA0MCBMMTI3OSAzNSBMMTI3OSA5MDkgWicvPjwvc3ZnPg==");
-  --etinpo-parallax-image: url("../image/product/productFooter.png");
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDkwOSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDkwOSBMMCAxNjMgTDE5IDE0MiBMMzEgMTA1IEwzOSA5NiBMNDYgOTMgTDYxIDkyIEwxMDEgOTggTDEyMSA5NyBMMTQxIDkzIEwxODYgNzcgTDIyMCA2OSBMMjQ2IDY2IEwyOTQgNjggTDMyOSA3NSBMMzU3IDg0IEwzOTAgOTkgTDQxNiAxMTQgTDQ1NyAxNDUgTDUxMiAxOTkgTDU1MSAyMjcgTDU4NyAyNDEgTDYwNyAyNDQgTDYyOCAyNDQgTDY1MSAyNDEgTDY3MyAyMzUgTDY4OSAyMjggTDcyOCAyMDUgTDc2MiAxOTMgTDgwMCAxODcgTDg4MiAxODQgTDkyMSAxNzUgTDk3MyAxNjggTDEwMTUgMTUwIEwxMTAxIDEwMSBMMTE4NyA0NyBMMTIxMyA0MCBMMTI3OSAzNSBMMTI3OSA5MDkgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/product/productFooter.jpg');
   --etinpo-parallax-mask-size: cover;
   --etinpo-parallax-background-size: cover;
   --etinpo-parallax-scale: 1.34;
@@ -5020,7 +4952,7 @@ footer .footer {
 }
 
 .clean-page .cleanBanner_parallaxWindow {
-  --etinpo-parallax-image: url("../image/clean/banner.png");
+  --etinpo-parallax-image: url('../image/clean/banner.jpg');
   --etinpo-parallax-scale: 1.2;
   height: 300px;
 }
@@ -5030,18 +4962,25 @@ footer .footer {
 }
 
 .technologies-page .techPic1ParallaxMask {
-  --etinpo-parallax-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDY1OSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA0NTQgTDEyNjUgNDU1IEwxMTgwIDQ3NyBMMTEyOCA0ODUgTDEwNzQgNDg2IEwxMDIwIDQ3NyBMMTAwNSA0ODUgTDk3MyA1MTcgTDk2MCA1MjMgTDkxNyA1MTUgTDg3MyA1MTUgTDgyOCA1MjMgTDc1NSA1NDIgTDcyMSA1NDcgTDY3NiA1NDUgTDYxNiA1MzUgTDU4NCA1MzUgTDU2NSA1NDAgTDU1MyA1NDYgTDUyMSA1NzIgTDQ5NiA1ODAgTDQ1OSA1ODEgTDQwNyA1NzYgTDMzOCA1NzYgTDI5MyA1ODAgTDI1MiA1ODcgTDIxMCA1OTggTDE3MCA2MTMgTDEzOCA2MjkgTDExNCA2MzYgTDg2IDY0MCBMMCA2NDYgWicvPjwvc3ZnPg==");
-  --etinpo-parallax-image: url("../image/technolgy/pic1.png");
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDY1OSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA0NTQgTDEyNjUgNDU1IEwxMTgwIDQ3NyBMMTEyOCA0ODUgTDEwNzQgNDg2IEwxMDIwIDQ3NyBMMTAwNSA0ODUgTDk3MyA1MTcgTDk2MCA1MjMgTDkxNyA1MTUgTDg3MyA1MTUgTDgyOCA1MjMgTDc1NSA1NDIgTDcyMSA1NDcgTDY3NiA1NDUgTDYxNiA1MzUgTDU4NCA1MzUgTDU2NSA1NDAgTDU1MyA1NDYgTDUyMSA1NzIgTDQ5NiA1ODAgTDQ1OSA1ODEgTDQwNyA1NzYgTDMzOCA1NzYgTDI5MyA1ODAgTDI1MiA1ODcgTDIxMCA1OTggTDE3MCA2MTMgTDEzOCA2MjkgTDExNCA2MzYgTDg2IDY0MCBMMCA2NDYgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/technolgy/pic1.jpg');
   --etinpo-parallax-scale: 1.28;
-  aspect-ratio: 1280 / 659;
+  aspect-ratio: 1280/659;
   margin-top: 57px;
 }
 
+/* Mobile artwork starts directly beneath the navigation.  Desktop keeps the
+   original 57px composition until the separate wide-screen rule takes over. */
+@media (max-width: 767.98px) {
+  .technologies-page .techPic1ParallaxMask {
+    margin-top: 57px;
+  }
+}
 .technologies-page .techPic2ParallaxMask {
-  --etinpo-parallax-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDc2Mic+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDc2MiBMMCAyMCBMMzIgMjEgTDExMCAzNCBMMTQwIDM1IEwxNTcgMjcgTDE4MSA0IEwxOTAgMCBMMTk5IDAgTDI0OCAyNSBMMjg4IDM3IEwzNzMgNTIgTDQzOSA1NCBMNDY5IDU4IEw0OTMgNjQgTDUyMSA3NiBMNTYzIDEwMCBMNjA3IDExMSBMNjU4IDEzNiBMNjc3IDEzNyBMNzU0IDEwNyBMNzcxIDk3IEw4MjMgNTYgTDg0OCA0MSBMODgwIDI2IEw5MDkgMTYgTDk0MSA5IEw5NzIgNiBMMTAwNCA3IEwxMDUyIDE2IEwxMTAwIDMzIEwxMTE5IDM3IEwxMTQ3IDM4IEwxMTc1IDMzIEwxMTk0IDMzIEwxMjAwIDM1IEwxMjExIDQ2IEwxMjIxIDc5IEwxMjI3IDg5IEwxMjQ5IDEwOSBMMTI3OSAxMjYgTDEyNzkgNzYyIFonLz48L3N2Zz4=");
-  --etinpo-parallax-image: url("../image/technolgy/pic2.png");
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDc2Mic+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDc2MiBMMCAyMCBMMzIgMjEgTDExMCAzNCBMMTQwIDM1IEwxNTcgMjcgTDE4MSA0IEwxOTAgMCBMMTk5IDAgTDI0OCAyNSBMMjg4IDM3IEwzNzMgNTIgTDQzOSA1NCBMNDY5IDU4IEw0OTMgNjQgTDUyMSA3NiBMNTYzIDEwMCBMNjA3IDExMSBMNjU4IDEzNiBMNjc3IDEzNyBMNzU0IDEwNyBMNzcxIDk3IEw4MjMgNTYgTDg0OCA0MSBMODgwIDI2IEw5MDkgMTYgTDk0MSA5IEw5NzIgNiBMMTAwNCA3IEwxMDUyIDE2IEwxMTAwIDMzIEwxMTE5IDM3IEwxMTQ3IDM4IEwxMTc1IDMzIEwxMTk0IDMzIEwxMjAwIDM1IEwxMjExIDQ2IEwxMjIxIDc5IEwxMjI3IDg5IEwxMjQ5IDEwOSBMMTI3OSAxMjYgTDEyNzkgNzYyIFonLz48L3N2Zz4=');
+  --etinpo-parallax-image: url('../image/technolgy/pic2.jpg');
   --etinpo-parallax-scale: 1.24;
-  aspect-ratio: 1280 / 762;
+  aspect-ratio: 1280/762;
 }
 
 .partners-page {
@@ -5049,8 +4988,8 @@ footer .footer {
 }
 
 .partners-page .partnersBannerParallaxMask {
-  --etinpo-parallax-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDYwNSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA2MDQgTDEyMzIgNTk0IEwxMTgwIDU3OCBMMTAzMCA1MTYgTDkwMiA0NzQgTDgzMSA0NTYgTDc1NyA0NDEgTDY4NSA0MzAgTDYxOSA0MjMgTDUzMCA0MTggTDQ0MyA0MTggTDMyMCA0MjYgTDI0NyA0MzUgTDE3NSA0NDcgTDkwIDQ2NSBMMCA0ODkgWicvPjwvc3ZnPg==");
-  --etinpo-parallax-image: url("../image/partners/banner.png");
+  --etinpo-parallax-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDYwNSc+PHBhdGggZmlsbD0nd2hpdGUnIGQ9J00wIDAgTDEyNzkgMCBMMTI3OSA2MDQgTDEyMzIgNTk0IEwxMTgwIDU3OCBMMTAzMCA1MTYgTDkwMiA0NzQgTDgzMSA0NTYgTDc1NyA0NDEgTDY4NSA0MzAgTDYxOSA0MjMgTDUzMCA0MTggTDQ0MyA0MTggTDMyMCA0MjYgTDI0NyA0MzUgTDE3NSA0NDcgTDkwIDQ2NSBMMCA0ODkgWicvPjwvc3ZnPg==');
+  --etinpo-parallax-image: url('../image/partners/banner.jpg');
   --etinpo-parallax-mask-size: cover;
   --etinpo-parallax-mask-position: left center;
   --etinpo-parallax-background-size: cover;
@@ -5068,20 +5007,17 @@ footer .footer {
     width: auto;
     max-width: none;
   }
-
   .application-page--zh .applicationBanner .applicationBanner_text .application_text01 {
     flex: 1 1 72%;
     width: 72%;
     min-width: 0;
   }
-
   .application-page--zh .applicationBanner .applicationBanner_text .application_text02 {
     flex: 0 1 28%;
     width: 28%;
     min-width: 0;
   }
 }
-
 @media (min-width: 768px) {
   .product-page .productFooterParallaxMask {
     --etinpo-parallax-mask-size: 100% 100%;
@@ -5091,36 +5027,31 @@ footer .footer {
     --etinpo-parallax-position: center top;
     --etinpo-parallax-scale: 1.22;
     height: auto;
-    aspect-ratio: 1280 / 909;
+    aspect-ratio: 1280/909;
   }
-
   .clean-page .cleanBanner_parallaxWindow {
     --etinpo-parallax-scale: 1.22;
     height: auto;
-    aspect-ratio: 1281 / 635;
+    aspect-ratio: 1281/635;
   }
-
   .partners-page .partnersBannerParallaxMask {
     --etinpo-parallax-mask-size: 100% 100%;
     --etinpo-parallax-mask-position: center;
-    --etinpo-parallax-background-size: cover;
-    --etinpo-parallax-background-position: center top;
-    --etinpo-parallax-fit: cover;
-    --etinpo-parallax-position: center top;
+    --etinpo-parallax-background-size: 100% 100%;
+    --etinpo-parallax-background-position: center;
+    --etinpo-parallax-fit: fill;
+    --etinpo-parallax-position: center;
     --etinpo-parallax-scale: 1.22;
     height: auto;
-    aspect-ratio: 1280 / 605;
+    aspect-ratio: 1280/605;
   }
-
   .technologies-page .techPic1ParallaxMask {
     --etinpo-parallax-scale: 1.22;
   }
-
   .technologies-page .techPic2ParallaxMask {
     --etinpo-parallax-scale: 1.2;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .etinpoParallaxMask [data-parallax-layer],
   .etinpoParallaxWindow [data-parallax-layer] {
@@ -5128,7 +5059,256 @@ footer .footer {
     will-change: auto;
   }
 }
-
+/* English body copy should not use inter-word justification on narrow screens.
+   The shared language hook is present only on the twelve English pages, so the
+   Chinese typography and all non-justified centred labels remain untouched. */
+@media (max-width: 767.98px) {
+  .site-lang-en .values .action .actionText p,
+  .site-lang-en .clean .garment p,
+  .site-lang-en .YearinReview .year01 .yearIntroduction p,
+  .site-lang-en .application p,
+  .site-lang-en .application .techItem .techItemText p,
+  .site-lang-en .technologies .techsTheme p,
+  .site-lang-en .newtechnology p,
+  .site-lang-en .principles .principlesitem p,
+  .site-lang-en .product .productText p,
+  .site-lang-en .functionText p,
+  .site-lang-en .function .functionGroup .slogan04 p,
+  .site-lang-en .rd .rd_bn .text .text-g,
+  .site-lang-en .rd .rdFooter .rdFooter_text,
+  .site-lang-en .feature p,
+  .site-lang-en .technology,
+  .site-lang-en .technology .technologyText,
+  .site-lang-en .partner .partnerText {
+    text-align: left !important;
+    text-align-last: auto !important;
+    word-spacing: normal;
+  }
+}
+/* 1280-to-1920 desktop art direction.
+   The original artwork was composed at 1280px. Between 1280 and 1920 its
+   spatial offsets grow with the canvas; after 1920 they stop growing. Text
+   stays in a readable centered content rail while decorative art remains
+   full bleed. */
+@media (min-width: 1280px) {
+  .banner {
+    height: clamp(35rem, 43.75vw, 52.5rem);
+  }
+  .banner .eTINPO-bn-w {
+    top: clamp(3rem, 3.75vw, 4.5rem);
+  }
+  .banner .banner02 {
+    top: clamp(80px, 6.25vw, 120px);
+  }
+  .banner .banner02-lines {
+    width: clamp(244px, 19.0625vw, 366px);
+  }
+  .banner .banner03 {
+    width: clamp(189px, 14.765625vw, 283.5px);
+  }
+  .technology {
+    padding-top: clamp(15rem, 18.75vw, 22.5rem);
+    padding-bottom: clamp(10rem, 12.5vw, 15rem);
+  }
+  .technology .technologyContent {
+    top: clamp(15rem, 18.75vw, 22.5rem);
+    width: 80%;
+    max-width: 1320px;
+  }
+  .technology .technologyPhoto .photo_01 {
+    top: max(-22.5rem, -18.75vw);
+  }
+  .technology .technologyPhoto .photo_02 {
+    top: clamp(7rem, 8.75vw, 10.5rem);
+    width: clamp(870px, 67.96875vw, 1305px);
+  }
+  .technology .technologyPhoto .technologySlogan img.sloganSvg {
+    width: clamp(430px, 33.59375vw, 645px);
+    margin-left: clamp(225px, 17.578125vw, 337.5px);
+  }
+  .technology .technologyPhoto .technologySlogan img.technologySvg {
+    width: clamp(597px, 46.640625vw, 895.5px);
+    margin-left: clamp(160px, 12.5vw, 240px);
+    margin-top: clamp(2rem, 2.5vw, 3rem);
+  }
+  .technology .technologyText {
+    top: clamp(400px, 31.25vw, 600px);
+    max-width: clamp(380px, 29.6875vw, 500px);
+  }
+  .feature {
+    position: relative;
+    z-index: 3;
+    padding-top: clamp(20rem, 25vw, 30rem);
+    /* Reserve breathing room after the copy.  The cloth is returned to the
+       document flow below, so its increasingly large transparent canvas can
+       no longer rise over the NATURE / PROFESSIONAL paragraphs at 1920px. */
+    padding-bottom: clamp(16rem, 20vw, 24rem);
+  }
+  .feature .container {
+    position: relative;
+    z-index: 3;
+    max-width: clamp(980px, 76.5625vw, 1320px);
+  }
+  .featureCloth {
+    position: relative;
+    bottom: auto;
+    margin-top: max(-4.5rem, -3.75vw);
+    margin-bottom: max(-33rem, -27.5vw);
+    z-index: 2;
+  }
+  .featureCloth .photo_01 {
+    bottom: max(-9rem, -7.5vw);
+  }
+  .featureCloth .photo_02 {
+    top: clamp(3rem, 3.75vw, 4.5rem);
+  }
+  .homeproduct {
+    padding-top: clamp(60px, 4.6875vw, 90px);
+    padding-bottom: clamp(25rem, 31.25vw, 37.5rem);
+  }
+  .homeproduct .partner {
+    margin-left: clamp(20rem, 25vw, 30rem);
+    margin-top: max(-15rem, -12.5vw);
+    padding-bottom: clamp(5rem, 6.25vw, 7.5rem);
+  }
+  .about-page .bannerAbout .bannerText {
+    padding-top: clamp(5rem, 6.25vw, 7.5rem);
+  }
+  .about-page .bannerAbout .bannerText .bannerText01 {
+    padding-top: clamp(5rem, 6.25vw, 7.5rem);
+  }
+  .about-page .bannerAbout .bannerText .bannerText02 {
+    padding-top: clamp(3rem, 3.75vw, 4.5rem);
+  }
+  .about-page .bannerAbout .bannerText .bannerText03 {
+    padding-top: clamp(8rem, 10vw, 12rem);
+  }
+  .about-page .bannerAbout .bannerText .colth_bg {
+    top: clamp(18rem, 22.5vw, 27rem);
+  }
+  .about-page .newtechnology {
+    padding-top: clamp(4rem, 5vw, 6rem);
+    padding-bottom: clamp(10rem, 12.5vw, 15rem);
+  }
+  .about-page .newtechnology .AboutBn02 {
+    bottom: clamp(12rem, 15vw, 18rem);
+  }
+  .about-page--zh .newtechnology .AboutBn02 {
+    bottom: clamp(6rem, 7.5vw, 9rem);
+  }
+  .about-page .newtechnology .AboutBn03 {
+    top: clamp(145px, 11.328125vw, 217.5px);
+  }
+  .about-page .eco {
+    padding-bottom: clamp(11rem, 13.75vw, 16.5rem);
+  }
+  .about-page .eco .colth5 {
+    top: clamp(50px, 3.90625vw, 75px);
+  }
+  .about-page .principles {
+    padding-bottom: clamp(20rem, 25vw, 30rem);
+  }
+  .about-page .principles .smallItems,
+  .about-page--zh .principles .smallItems {
+    top: clamp(5rem, 6.25vw, 7.5rem);
+  }
+  .about-page .principles .principlesitem {
+    margin-bottom: clamp(8rem, 10vw, 12rem);
+  }
+  .about-page .principles .colth3 {
+    margin-top: max(-37.5rem, -31.25vw);
+  }
+  .product-page .product .productTop {
+    min-height: clamp(640px, 50vw, 960px);
+  }
+  .product-page .productSlogan {
+    min-height: clamp(545px, 42.578125vw, 817.5px);
+  }
+  .contact .contactFooter {
+    padding-top: clamp(50rem, 62.5vw, 75rem);
+    margin-top: max(-15rem, -12.5vw);
+  }
+}
+/* A 1280x987 hero already fills a 1920x1080 desktop viewport vertically.
+   Do not keep deriving its height from viewport width on larger monitors. */
+@media (min-width: 1440px) {
+  .application-page .applicationBanner_parallaxMask {
+    height: 987px;
+    aspect-ratio: auto;
+  }
+  .application-page .applicationBanner .applicationBanner_text {
+    left: max(5rem, (100vw - 1280px) / 2 + 5rem);
+  }
+}
+/* 1920px is the maximum art-direction canvas. Beyond it, backgrounds may
+   continue full bleed but the authored foreground composition stays centered
+   instead of drifting or growing into adjacent copy. */
+@media (min-width: 1920px) {
+  .banner > .col-12 {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin-inline: auto;
+  }
+  .technology .technologyPhoto {
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+  .featureCloth {
+    left: 50%;
+    width: 100%;
+    max-width: 1920px;
+    translate: -50% 0;
+  }
+  .about-page .bannerAbout .bannerText .colth_bg,
+  .about-page .newtechnology .AboutBn02,
+  .about-page .eco .colth5 {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    translate: 0 0;
+  }
+  /* At 1920px the authored cloth needs a lower baseline.  Keeping this in the
+     wide-only query preserves the existing 1280px composition. */
+  .about-page .newtechnology .AboutBn02 {
+    bottom: clamp(4rem, 4vw, 5rem);
+  }
+  .about-page .eco::before {
+    --about-eco-cap-height: 8.984375vw;
+    left: 50%;
+    top: calc(1px - var(--about-eco-cap-height));
+    width: 100vw;
+    max-width: none;
+    height: var(--about-eco-cap-height);
+    transform: translateX(-50%);
+    background-position: center bottom;
+    background-size: 100% 100%;
+  }
+  .about-page .principles .colth3 {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .product-page .productSlogan .sloganCloth {
+    top: calc(100% - 1017px);
+    right: calc((100vw - 1920px) / 2);
+    width: 1920px;
+    max-width: none;
+  }
+  .contact .contactFooter {
+    background-position: top center;
+    background-size: 100% auto;
+    padding-top: calc(60.9375vw + 30px);
+    margin-top: -12.5vw;
+  }
+  .technologies-page .techPic1ParallaxMask {
+    margin-top: 0;
+  }
+}
 /* RD responsive composition and safe stacking. */
 /* About page copy must remain selectable/readable above its decorative cloth. */
 .about-page .principles .principlesitem .itemText {
@@ -5142,10 +5322,13 @@ footer .footer {
 }
 
 @keyframes rd-safe-float {
-  0%, 100% { translate: 0 0; }
-  50% { translate: 0 -6px; }
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
 }
-
 .rd-page .rd {
   /* The mobile footer is taller than the desktop footer.  Reserving the
      correct amount lets its green arc mask the cloth instead of exposing a
@@ -5154,7 +5337,7 @@ footer .footer {
 }
 
 .rd-page .rd .rd-decor-float {
-  animation: rd-safe-float 4s ease-in-out infinite;
+  animation: rd-safe-float 10s ease-in-out infinite;
   will-change: translate;
 }
 
@@ -5180,7 +5363,7 @@ footer .footer {
 
 .rd-page .rd .rdBnLabels {
   position: absolute;
-  top: clamp(340px, calc(243.33px + 8.334vw), 350px);
+  top: clamp(340px, 243.33px + 8.334vw, 350px);
   bottom: auto;
   z-index: 2;
 }
@@ -5189,28 +5372,36 @@ footer .footer {
 .rd-page .rd .rdBnLabels--en {
   left: 11.5%;
   width: min(70%, 895px);
-  aspect-ratio: 895.17 / 178.21;
+  aspect-ratio: 895.17/178.21;
 }
 
+/* Preserve the 1280px art direction, then move both language label systems
+   toward the fabric's visual centre until the 1920px reference position. */
+@media (min-width: 1280px) {
+  .rd-page .rd .rdBnLabels--zh,
+  .rd-page .rd .rdBnLabels--en {
+    left: max(11.5%, 41.5vw - 384px, 50vw - 547.2px);
+  }
+}
 .rd-page .rd .rdBnLabels--zh {
   height: auto;
-  filter: drop-shadow(0 2px 2px rgba(0, 70, 50, .18));
+  filter: drop-shadow(0 2px 2px rgba(0, 70, 50, 0.18));
 }
 
 .rd-page .rd .rdBnLabels--en {
   color: #fff;
   text-transform: uppercase;
-  filter: drop-shadow(0 2px 2px rgba(0, 70, 50, .28));
+  filter: drop-shadow(0 2px 2px rgba(0, 70, 50, 0.28));
 }
 
 .rd-page .rd .rdBnLabel {
   position: absolute;
   color: inherit;
   font-family: "Inter", sans-serif;
-  font-size: clamp(.8rem, 1.45vw, 1.15rem);
+  font-size: clamp(0.8rem, 1.45vw, 1.15rem);
   font-weight: 300;
   line-height: 1.2;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   white-space: nowrap;
 }
 
@@ -5229,7 +5420,7 @@ footer .footer {
 }
 
 .rd-page .rd .rdBnLabels--en .rdBnSpace {
-  width: .34em;
+  width: 0.34em;
 }
 
 @keyframes rd-label-letter-cycle {
@@ -5246,7 +5437,6 @@ footer .footer {
     transform: translateY(var(--rd-letter-y));
   }
 }
-
 .rd-page .rd .rdBnLabel--textile {
   left: 0;
   bottom: 0;
@@ -5297,7 +5487,7 @@ footer .footer {
 
 .rd-page .rd .rdFooter .rdFooter_text {
   z-index: 3;
-  background: rgba(255, 255, 255, .72);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .rd-page .rd .rdFooter .rdFooter_text p {
@@ -5310,8 +5500,8 @@ footer .footer {
   z-index: 4;
   display: block;
   width: 122px;
-  margin-top: .25rem;
-  padding: .6rem 0;
+  margin-top: 0.25rem;
+  padding: 0.6rem 0;
   align-self: flex-end;
 }
 
@@ -5331,7 +5521,6 @@ footer .footer {
     justify-content: flex-start;
     padding-top: 5.5rem;
   }
-
   .rd-page .rd .rd_bn .text {
     position: relative;
     inset: auto;
@@ -5339,7 +5528,6 @@ footer .footer {
     margin: 0;
     z-index: 3;
   }
-
   .rd-page .rd .rd_bn .text .text-g {
     box-sizing: border-box;
     width: 100%;
@@ -5348,16 +5536,14 @@ footer .footer {
     padding: 1.5rem clamp(2rem, 9vw, 3rem) 0;
     font-size: 1.05rem;
     line-height: 2;
-    letter-spacing: .22em;
+    letter-spacing: 0.22em;
     text-align: left;
   }
-
   .rd-page--en .rd .rd_bn .text .text-g {
     font-size: 1rem;
     line-height: 1.85;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
-
   .rd-page .rd .rd_bn .cloth-w {
     position: relative;
     align-self: center;
@@ -5374,30 +5560,25 @@ footer .footer {
     pointer-events: none;
     user-select: none;
   }
-
   .rd-page .rd .rdBnLabels--zh,
   .rd-page .rd .rdBnLabels--en {
     left: 5%;
     width: 90%;
   }
-
   .rd-page .rd .rdBnLabel {
-    font-size: clamp(.52rem, 2vw, .65rem);
-    letter-spacing: .04em;
+    font-size: clamp(0.52rem, 2vw, 0.65rem);
+    letter-spacing: 0.04em;
   }
-
   .rd-page .rd .actionGroup {
     position: relative;
     z-index: 2;
     padding-top: 2rem;
   }
-
   .rd-page .rd .action {
     box-sizing: border-box;
     margin: 2.5rem auto;
     padding-inline: clamp(1.5rem, 6vw, 2rem);
   }
-
   .rd-page .rd .action > img {
     display: block;
     width: 100%;
@@ -5405,7 +5586,6 @@ footer .footer {
     max-height: none !important;
     object-fit: contain;
   }
-
   .rd-page .rd .action .actionText {
     box-sizing: border-box;
     width: 100%;
@@ -5415,32 +5595,27 @@ footer .footer {
     justify-content: flex-start;
     padding: 1.5rem;
   }
-
   .rd-page .rd .action .actionText p {
     margin-bottom: 0;
     padding-top: 1rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.65;
   }
-
   .rd-page .rd .rdFooter {
     display: grid;
-    grid-template: minmax(clamp(32rem, 125vw, 40rem), auto) / minmax(0, 1fr);
+    grid-template: minmax(clamp(32rem, 125vw, 40rem), auto)/minmax(0, 1fr);
     overflow: visible;
   }
-
   .rd-page .rd .rdFooter .clouth,
   .rd-page .rd .rdFooter .rdFooter_text {
-    grid-area: 1 / 1;
+    grid-area: 1/1;
   }
-
   .rd-page .rd .rdFooter .clouth {
     position: relative;
     min-height: clamp(32rem, 125vw, 40rem);
     padding-top: 0;
     z-index: 0;
   }
-
   .rd-page .rd .rdFooter .clouth1 {
     position: absolute;
     left: -12%;
@@ -5449,7 +5624,6 @@ footer .footer {
     height: auto;
     z-index: 2;
   }
-
   .rd-page .rd .rdFooter .clouth2 {
     position: absolute;
     right: -18%;
@@ -5460,7 +5634,6 @@ footer .footer {
     transform: none;
     z-index: 1;
   }
-
   .rd-page .rd .rdFooter .rdFooter_text {
     position: relative;
     inset: auto;
@@ -5474,27 +5647,22 @@ footer .footer {
     text-align: left;
     line-height: 1.7;
   }
-
   .rd-page--en .rd .rdFooter .rdFooter_text {
     letter-spacing: 1px;
   }
-
   .rd-page .rd .rdFooter .rdFooter_btnLink {
     align-self: flex-end;
   }
 }
-
 @media (min-width: 768px) {
   .rd-page .rd {
     padding-bottom: 6rem;
   }
-
   .rd-page .rd .rd_bn .text {
     /* Keep the introductory copy above the four white field labels, as in
        the supplied desktop composition. */
     top: 2rem;
   }
-
   .rd-page .rd .action > img {
     flex: 0 0 164px;
     align-self: stretch;
@@ -5503,7 +5671,6 @@ footer .footer {
     max-height: none;
     object-fit: cover;
   }
-
   .rd-page .rd .action .actionText {
     flex: 0 1 350px;
     box-sizing: border-box;
@@ -5511,38 +5678,32 @@ footer .footer {
     min-height: 133px;
     max-height: none;
   }
-
   .rd-page .rd .rdFooter .clouth1 {
-    bottom: -5rem;
+    bottom: -2rem;
   }
-
   .rd-page .rd .rdFooter .clouth2 {
     right: 0;
     bottom: -2rem;
     z-index: 1;
   }
-
   .rd-page--en .rd .rdFooter .rdFooter_text {
     right: 18rem;
     width: 420px;
     max-width: 420px;
     padding: 2rem 3rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
     letter-spacing: 5px;
     text-align: left;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .rd-page .rd .rd-decor-float {
     animation: none;
     translate: none;
   }
-
   .rd-page .rd .rdBnLabels {
     transition: none !important;
   }
-
   .rd-page .rd .rdBnLetter {
     opacity: 1;
     transform: none;

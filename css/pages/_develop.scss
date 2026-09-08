@@ -239,3 +239,21 @@
         }
     }
 }
+
+/* pic7 and pic9 are linked, unlike the other timeline images.  On mobile the
+   percentage width must belong to the link wrapper once, not be applied a
+   second time to the image inside it. */
+@media (max-width: 767.98px) {
+    .YearinReview .year > a {
+        display: block;
+        width: 50%;
+        max-width: 50%;
+    }
+
+    .YearinReview .year > a > .yearimg {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}

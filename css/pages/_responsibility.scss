@@ -210,3 +210,16 @@
     }
   }
 }
+
+/* The English page has no Chinese eyebrow heading above OUR CORE VALUES.
+   Restore that reserved mobile space and keep the title above the wave art. */
+@media (max-width: 767.98px) {
+  .responsibility-page--en .values {
+    padding-top: 3rem;
+  }
+
+  .responsibility-page--en .values > h4 {
+    position: relative;
+    z-index: 2;
+  }
+}
