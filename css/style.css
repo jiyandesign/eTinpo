@@ -5234,8 +5234,7 @@ footer .footer {
    Do not keep deriving its height from viewport width on larger monitors. */
 @media (min-width: 1440px) {
   .application-page .applicationBanner_parallaxMask {
-    height: 987px;
-    aspect-ratio: auto;
+
   }
   .application-page .applicationBanner .applicationBanner_text {
     left: max(5rem, (100vw - 1280px) / 2 + 5rem);
