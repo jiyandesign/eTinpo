@@ -3210,7 +3210,7 @@ a:hover {
 }
 @media (min-width: 768px) {
   .technologyFeature {
-    background: linear-gradient(180deg, #001A12 0%, #D5DEE1 10%, #D5DEE1 70%, #004632 100%);
+    background: linear-gradient(180deg, #001A12 0%, #D5DEE1 10%, #D5DEE1 70%, #004632 85%);
   }
 }
 
@@ -3572,6 +3572,7 @@ a:hover {
 }
 @media (min-width: 768px) {
   .homeproduct {
+  background: linear-gradient(180deg, #004632 0%, #004632 15%, #D5DEE1 35%, #D5DEE1 100%);
     padding: 60px 0 25rem;
   }
 }
