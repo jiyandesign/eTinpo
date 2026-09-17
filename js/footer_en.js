@@ -33,7 +33,6 @@ footer =/*html*/`
         <div class="text-center text-md-start footerLocation">
             Phone / +886-6-505-1179<br>
             Email / info@etinpo.com.tw <br>
-            Monday to Friday 9:30 A.M. to 5 P.M.<br>
             Address / No. 10-1, Nanke 2nd Rd., Xinshi Dist.,<br>
              Tainan City 744092, Taiwan (R.O.C.)<br>
         </div>

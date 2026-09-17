@@ -1935,7 +1935,17 @@
 }
 
 @media (min-width: 768px) {
-  .bannerTechs--en .bannerText .b-left-en { flex: 0 1 42%; width: 42%; max-width: 560px; }
+  .bannerTechs--en .bannerText .b-left-en {
+    flex: 0 1 42%;
+    width: 42%;
+    max-width: 560px;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0) scale(1.5);
+    transform-origin: left center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
   .bannerTechs--en .bannerText .b-right { flex: 0 1 52%; width: 52%; max-width: 645px; min-width: 0; margin-left: 2%; }
 }
 
@@ -2866,6 +2876,11 @@ footer .footer {
   filter: drop-shadow(0 2px 2px rgba(0, 70, 50, .28));
 }
 
+.rd-page .rd .rdBnLabels--en .rdBnLabel {
+  font-size: clamp(.95rem, 1.65vw, 1.3rem);
+  font-weight: 700;
+}
+
 .rd-page .rd .rdBnLabel {
   position: absolute;
   color: inherit;
@@ -2970,6 +2985,10 @@ footer .footer {
   margin-bottom: 1rem;
 }
 
+.rd-page--en .rd .rdFooter .rdFooter_text p {
+  letter-spacing: 0;
+}
+
 .rd-page .rd .rdFooter .rdFooter_btnLink {
   position: relative;
   z-index: 4;
@@ -3049,6 +3068,10 @@ footer .footer {
   .rd-page .rd .rdBnLabel {
     font-size: clamp(.52rem, 2vw, .65rem);
     letter-spacing: .04em;
+  }
+
+  .rd-page .rd .rdBnLabels--en .rdBnLabel {
+    font-size: clamp(.6rem, 2.2vw, .72rem);
   }
 
   .rd-page .rd .actionGroup {

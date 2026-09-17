@@ -1282,7 +1282,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   margin: auto;
-  text-align: justify;
+  text-align: left;
   color: #595757;
   font-family: "Noto Sans TC", sans-serif;
 }
@@ -4488,7 +4488,7 @@ footer .eTinpoLogo img {
 
 @media (min-width: 1024px) {
   .application .application-item--apparel .techItemText p {
-    width: 500px;
+    width: 550px;
   }
   .application .application-item--footwear .techItemText p {
     width: 600px;
@@ -4516,6 +4516,12 @@ footer .eTinpoLogo img {
     flex: 0 1 42%;
     width: 42%;
     max-width: 560px;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0) scale(1.5);
+    transform-origin: left center;
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
   .bannerTechs--en .bannerText .b-right {
     flex: 0 1 52%;
@@ -5394,6 +5400,11 @@ footer .footer {
   filter: drop-shadow(0 2px 2px rgba(0, 70, 50, 0.28));
 }
 
+.rd-page .rd .rdBnLabels--en .rdBnLabel {
+  font-size: clamp(0.95rem, 1.65vw, 1.3rem);
+  font-weight: 700;
+}
+
 .rd-page .rd .rdBnLabel {
   position: absolute;
   color: inherit;
@@ -5495,6 +5506,10 @@ footer .footer {
   margin-bottom: 1rem;
 }
 
+.rd-page--en .rd .rdFooter .rdFooter_text p {
+  letter-spacing: 0;
+}
+
 .rd-page .rd .rdFooter .rdFooter_btnLink {
   position: relative;
   z-index: 4;
@@ -5568,6 +5583,9 @@ footer .footer {
   .rd-page .rd .rdBnLabel {
     font-size: clamp(0.52rem, 2vw, 0.65rem);
     letter-spacing: 0.04em;
+  }
+  .rd-page .rd .rdBnLabels--en .rdBnLabel {
+    font-size: clamp(0.6rem, 2.2vw, 0.72rem);
   }
   .rd-page .rd .actionGroup {
     position: relative;
