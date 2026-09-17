@@ -4518,7 +4518,7 @@ footer .eTinpoLogo img {
     max-width: 560px;
     position: relative;
     z-index: 1;
-    transform: translateZ(0) scale(1.5);
+    transform: translateZ(0) scale(1.3);
     transform-origin: left center;
     padding-top: 20px;
     padding-bottom: 40px;
